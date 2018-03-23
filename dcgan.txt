@@ -1,0 +1,12 @@
+Stvaranje fotografija pomoću DCGAN
+- analiza dcgan mreža
+- treniranje dcgan mreža
+- rekreiranje fotografija pomoću dcgan-a
+	- započet s rekreiranjem MNIST dataseta
+	- pokušat s nekim kompleksnijim datasetovima (npr. slike lica, cipela itd)
+	
+	
+https://towardsdatascience.com/implementing-a-generative-adversarial-network-gan-dcgan-to-draw-human-faces-8291616904a
+Simen Selseng - Guiding the training of Generative Adversarial Networks
+https://blog.openai.com/generative-models/
+https://github.com/soumith/dcgan.torch

@@ -1,0 +1,6 @@
+> opisat duboko učenje
+> opisat frameworke za duboko učenje
+> opisat generativne modele
+> opisat DCGAN-ove
+> istrenirat DCGAN nad MNIST-om (grafove za ocjenu, drugačiji parametri itd.)
+> istrenirat DCGAN nad kompliciranijem skupom podataka (grafove za ocjenu, drugačiji parametri itd.)

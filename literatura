@@ -1,0 +1,14 @@
+Neki primjeri i tutoriali za GAN:
+https://github.com/nightrome/really-awesome-gan
+
+Model koji mogu jednostavno istrenirat sa svojim skupom podataka:
+https://github.com/soumith/dcgan.torch
+
+Općenito o generativnim modelima i njihovoj uporabi (ima nekoliko primjera i linkova na github gdje su kodovi):
+https://blog.openai.com/generative-models/
+
+Implementacija generativnog modela za rekreiranje ljudskih lica (ima i djelova sa kodom)
+https://towardsdatascience.com/implementing-a-generative-adversarial-network-gan-dcgan-to-draw-human-faces-8291616904a
+
+DCGAN MNIST
+https://github.com/znxlwm/tensorflow-MNIST-GAN-DCGAN
