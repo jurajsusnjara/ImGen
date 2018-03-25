@@ -3,6 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
+import config as cfg
+
+
+# citanje cijelog configa
 
 
 # G(z)
@@ -32,6 +36,23 @@ def generator(x):
     o = tf.nn.tanh(tf.matmul(h2, w3) + b3)
 
     return o
+
+
+def generator_var(x, layers):
+    # initializers
+    w_init = tf.truncated_normal_initializer(mean=0, stddev=0.02)
+    b_init = tf.constant_initializer(0.)
+
+    # Hidden layers
+    idx = 0
+    h = x
+    for layer in layers:
+        w = tf.get_variable('G_w' + str(idx), [h.get_shape()[1], layer], initializer=w_init)
+        b = tf.get_variable('G_b' + str(idx), [layer], initializer=b_init)
+        h = tf.nn.tanh(tf.matmul(h, w) + b) if idx == len(layers)-1 else tf.nn.relu(tf.matmul(h, w) + b)
+        idx += 1
+
+    return h
 
 
 # D(x)
@@ -67,6 +88,25 @@ def discriminator(x, drop_out):
     return o
 
 
+def discriminator_var(x, drop_out, layers):
+    w_init = tf.truncated_normal_initializer(mean=0, stddev=0.02)
+    b_init = tf.constant_initializer(0.)
+
+    idx = 0
+    h = x
+    for layer in layers:
+        w = tf.get_variable('D_w' + str(idx), [h.get_shape()[1], layer], initializer=w_init)
+        b = tf.get_variable('D_b' + str(idx), [layer], initializer=b_init)
+        if idx == len(layers)-1:
+            h = tf.sigmoid(tf.matmul(h, w) + b)
+        else:
+            h = tf.nn.relu(tf.matmul(h, w) + b)
+            h = tf.nn.dropout(h, drop_out)
+        idx += 1
+
+    return h
+
+
 fixed_z_ = np.random.normal(0, 1, (25, 100))
 def show_result(num_epoch, show = False, save = False, path = 'result.png', isFix=False):
     z_ = np.random.normal(0, 1, (25, 100))
@@ -97,6 +137,7 @@ def show_result(num_epoch, show = False, save = False, path = 'result.png', isFi
     else:
         plt.close()
 
+
 def show_train_hist(hist, show = False, save = False, path = 'Train_hist.png'):
     x = range(len(hist['D_losses']))
 
@@ -121,10 +162,11 @@ def show_train_hist(hist, show = False, save = False, path = 'Train_hist.png'):
     else:
         plt.close()
 
+
 # training parameters
 batch_size = 100
 lr = 0.0002
-train_epoch = 50
+train_epoch = 10
 
 # load MNIST
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
@@ -133,15 +175,15 @@ train_set = (mnist.train.images - 0.5) / 0.5  # normalization; range: -1 ~ 1
 # networks : generator
 with tf.variable_scope('G'):
     z = tf.placeholder(tf.float32, shape=(None, 100))
-    G_z = generator(z)
+    G_z = generator_var(z, [256, 512, 1024, 784])
 
 # networks : discriminator
 with tf.variable_scope('D') as scope:
     drop_out = tf.placeholder(dtype=tf.float32, name='drop_out')
     x = tf.placeholder(tf.float32, shape=(None, 784))
-    D_real = discriminator(x, drop_out)
+    D_real = discriminator_var(x, drop_out, [1024, 512, 256, 1])
     scope.reuse_variables()
-    D_fake = discriminator(G_z, drop_out)
+    D_fake = discriminator_var(G_z, drop_out, [1024, 512, 256, 1])
 
 
 # loss for each network
