@@ -7,38 +7,18 @@ import config as cfg
 
 
 # citanje cijelog configa
+cfg.parse_config('config.cfg')
+batch_size = int(cfg.config['gan']['batch_size'])
+lr = float(cfg.config['gan']['lr'])
+train_epoch = int(cfg.config['gan']['train_epoch'])
+g_layers = [int(el) for el in cfg.config['gan']['g_layers'].split(',')]
+d_layers = [int(el) for el in cfg.config['gan']['d_layers'].split(',')]
+z_size = int(cfg.config['gan']['z_size'])
+drop_out_p = float(cfg.config['gan']['drop_out'])
 
 
 # G(z)
-def generator(x):
-    # initializers
-    w_init = tf.truncated_normal_initializer(mean=0, stddev=0.02)
-    b_init = tf.constant_initializer(0.)
-
-    # 1st hidden layer
-    w0 = tf.get_variable('G_w0', [x.get_shape()[1], 256], initializer=w_init)
-    b0 = tf.get_variable('G_b0', [256], initializer=b_init)
-    h0 = tf.nn.relu(tf.matmul(x, w0) + b0)
-
-    # 2nd hidden layer
-    w1 = tf.get_variable('G_w1', [h0.get_shape()[1], 512], initializer=w_init)
-    b1 = tf.get_variable('G_b1', [512], initializer=b_init)
-    h1 = tf.nn.relu(tf.matmul(h0, w1) + b1)
-
-    # 3rd hidden layer
-    w2 = tf.get_variable('G_w2', [h1.get_shape()[1], 1024], initializer=w_init)
-    b2 = tf.get_variable('G_b2', [1024], initializer=b_init)
-    h2 = tf.nn.relu(tf.matmul(h1, w2) + b2)
-
-    # output hidden layer
-    w3 = tf.get_variable('G_w3', [h2.get_shape()[1], 784], initializer=w_init)
-    b3 = tf.get_variable('G_b3', [784], initializer=b_init)
-    o = tf.nn.tanh(tf.matmul(h2, w3) + b3)
-
-    return o
-
-
-def generator_var(x, layers):
+def generator(x, layers):
     # initializers
     w_init = tf.truncated_normal_initializer(mean=0, stddev=0.02)
     b_init = tf.constant_initializer(0.)
@@ -56,39 +36,7 @@ def generator_var(x, layers):
 
 
 # D(x)
-def discriminator(x, drop_out):
-
-    # initializers
-    w_init = tf.truncated_normal_initializer(mean=0, stddev=0.02)
-    b_init = tf.constant_initializer(0.)
-
-    # 1st hidden layer
-    w0 = tf.get_variable('D_w0', [x.get_shape()[1], 1024], initializer=w_init)
-    b0 = tf.get_variable('D_b0', [1024], initializer=b_init)
-    h0 = tf.nn.relu(tf.matmul(x, w0) + b0)
-    h0 = tf.nn.dropout(h0, drop_out)
-
-    # 2nd hidden layer
-    w1 = tf.get_variable('D_w1', [h0.get_shape()[1], 512], initializer=w_init)
-    b1 = tf.get_variable('D_b1', [512], initializer=b_init)
-    h1 = tf.nn.relu(tf.matmul(h0, w1) + b1)
-    h1 = tf.nn.dropout(h1, drop_out)
-
-    # 3rd hidden layer
-    w2 = tf.get_variable('D_w2', [h1.get_shape()[1], 256], initializer=w_init)
-    b2 = tf.get_variable('D_b2', [256], initializer=b_init)
-    h2 = tf.nn.relu(tf.matmul(h1, w2) + b2)
-    h2 = tf.nn.dropout(h2, drop_out)
-
-    # output layer
-    w3 = tf.get_variable('D_w3', [h2.get_shape()[1], 1], initializer=w_init)
-    b3 = tf.get_variable('D_b3', [1], initializer=b_init)
-    o = tf.sigmoid(tf.matmul(h2, w3) + b3)
-
-    return o
-
-
-def discriminator_var(x, drop_out, layers):
+def discriminator(x, drop_out, layers):
     w_init = tf.truncated_normal_initializer(mean=0, stddev=0.02)
     b_init = tf.constant_initializer(0.)
 
@@ -107,9 +55,9 @@ def discriminator_var(x, drop_out, layers):
     return h
 
 
-fixed_z_ = np.random.normal(0, 1, (25, 100))
+fixed_z_ = np.random.normal(0, 1, (25, z_size))
 def show_result(num_epoch, show = False, save = False, path = 'result.png', isFix=False):
-    z_ = np.random.normal(0, 1, (25, 100))
+    z_ = np.random.normal(0, 1, (25, z_size))
 
     if isFix:
         test_images = sess.run(G_z, {z: fixed_z_, drop_out: 0.0})
@@ -164,26 +112,26 @@ def show_train_hist(hist, show = False, save = False, path = 'Train_hist.png'):
 
 
 # training parameters
-batch_size = 100
-lr = 0.0002
-train_epoch = 10
+# batch_size = 100
+# lr = 0.0002
+# train_epoch = 10
 
 # load MNIST
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 train_set = (mnist.train.images - 0.5) / 0.5  # normalization; range: -1 ~ 1
 
-# networks : generator
+# networks : generator[1024, 512, 256, 1]
 with tf.variable_scope('G'):
-    z = tf.placeholder(tf.float32, shape=(None, 100))
-    G_z = generator_var(z, [256, 512, 1024, 784])
+    z = tf.placeholder(tf.float32, shape=(None, z_size))
+    G_z = generator(z, [256, 512, 1024, 784])
 
 # networks : discriminator
 with tf.variable_scope('D') as scope:
     drop_out = tf.placeholder(dtype=tf.float32, name='drop_out')
     x = tf.placeholder(tf.float32, shape=(None, 784))
-    D_real = discriminator_var(x, drop_out, [1024, 512, 256, 1])
+    D_real = discriminator(x, drop_out, d_layers)
     scope.reuse_variables()
-    D_fake = discriminator_var(G_z, drop_out, [1024, 512, 256, 1])
+    D_fake = discriminator(G_z, drop_out, d_layers)
 
 
 # loss for each network
@@ -228,14 +176,14 @@ for epoch in range(train_epoch):
     for iter in range(train_set.shape[0] // batch_size):
         # update discriminator
         x_ = train_set[iter*batch_size:(iter+1)*batch_size]
-        z_ = np.random.normal(0, 1, (batch_size, 100))
+        z_ = np.random.normal(0, 1, (batch_size, z_size))
 
-        loss_d_, _ = sess.run([D_loss, D_optim], {x: x_, z: z_, drop_out: 0.3})
+        loss_d_, _ = sess.run([D_loss, D_optim], {x: x_, z: z_, drop_out: drop_out_p})
         D_losses.append(loss_d_)
 
         # update generator
-        z_ = np.random.normal(0, 1, (batch_size, 100))
-        loss_g_, _ = sess.run([G_loss, G_optim], {z: z_, drop_out: 0.3})
+        z_ = np.random.normal(0, 1, (batch_size, z_size))
+        loss_g_, _ = sess.run([G_loss, G_optim], {z: z_, drop_out: drop_out_p})
         G_losses.append(loss_g_)
 
     epoch_end_time = time.time()
