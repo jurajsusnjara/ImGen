@@ -1,0 +1,11 @@
+BILJEŠKE:
+
+> trenirat mnist s gan-om i dcgan-om. unutar svakog vidit koji parametri najbolje odgovaraju (slojevi, relu/tanh/sigmoid, dropout, z_dim...). onda međusobno usporedit najbolje od gan-a i najbolje od dcgan-a.
+> dodavat šum u ulazne slike itd. to kod pravih slika
+
+> objasnit dekonvoluciju (transposed convolution), čitav proces, batch normalization...
+	https://towardsdatascience.com/up-sampling-with-transposed-convolution-9ae4f2df52d0
+> zašto normalizacija: 
+	https://towardsdatascience.com/batch-normalization-in-neural-networks-1ac91516821c
+	https://gab41.lab41.org/batch-normalization-what-the-hey-d480039a9e3b
+> što je dropout i zašto ga koristit

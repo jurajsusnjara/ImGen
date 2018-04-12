@@ -123,7 +123,7 @@ train_set = (mnist.train.images - 0.5) / 0.5  # normalization; range: -1 ~ 1
 # networks : generator[1024, 512, 256, 1]
 with tf.variable_scope('G'):
     z = tf.placeholder(tf.float32, shape=(None, z_size))
-    G_z = generator(z, [256, 512, 1024, 784])
+    G_z = generator(z, g_layers)
 
 # networks : discriminator
 with tf.variable_scope('D') as scope:

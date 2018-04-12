@@ -3,35 +3,42 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
+import config as cfg
 
 
 def lrelu(x, th=0.2):
     return tf.maximum(th * x, x)
 
 
+cfg.parse_config('config.cfg')
+batch_size = int(cfg.config['dcgan']['batch_size'])
+lr = float(cfg.config['dcgan']['lr'])
+train_epoch = int(cfg.config['dcgan']['train_epoch'])
+k = int(cfg.config['dcgan']['kernel'])
+kernel = [k, k]
+g_depths = [int(el) for el in cfg.config['dcgan']['g_depths'].split(',')]
+d_depths = [int(el) for el in cfg.config['dcgan']['d_depths'].split(',')]
+batch_norm = True if cfg.config['dcgan']['batch_norm'] == 'true' else False
+stride = int(cfg.config['dcgan']['stride'])
+z_size = int(cfg.config['dcgan']['z_size'])
+img_dim_str = cfg.config['dcgan']['img_dim'].split('x')
+img_dim = (int(img_dim_str[0]), int(img_dim_str[1]))
+
+
 # G(z)
 def generator(x, isTrain=True, reuse=False):
     with tf.variable_scope('generator', reuse=reuse):
-
-        # 1st hidden layer
-        conv1 = tf.layers.conv2d_transpose(x, 1024, [4, 4], strides=(1, 1), padding='valid')
-        lrelu1 = lrelu(tf.layers.batch_normalization(conv1, training=isTrain), 0.2)
-
-        # 2nd hidden layer
-        conv2 = tf.layers.conv2d_transpose(lrelu1, 512, [4, 4], strides=(2, 2), padding='same')
-        lrelu2 = lrelu(tf.layers.batch_normalization(conv2, training=isTrain), 0.2)
-
-        # 3rd hidden layer
-        conv3 = tf.layers.conv2d_transpose(lrelu2, 256, [4, 4], strides=(2, 2), padding='same')
-        lrelu3 = lrelu(tf.layers.batch_normalization(conv3, training=isTrain), 0.2)
-
-        # 4th hidden layer
-        conv4 = tf.layers.conv2d_transpose(lrelu3, 128, [4, 4], strides=(2, 2), padding='same')
-        lrelu4 = lrelu(tf.layers.batch_normalization(conv4, training=isTrain), 0.2)
-
-        # output layer
-        conv5 = tf.layers.conv2d_transpose(lrelu4, 1, [4, 4], strides=(2, 2), padding='same')
-        o = tf.nn.tanh(conv5)
+        idx = 0
+        inp = x
+        for depth in g_depths[:-1]:
+            padding, strides = ('valid', (1, 1)) if idx == 0 else ('same', (stride, stride))
+            conv = tf.layers.conv2d_transpose(inp, depth, kernel, strides=strides, padding=padding)
+            temp = tf.layers.batch_normalization(conv, training=isTrain) if batch_norm else conv
+            inp = lrelu(temp, 0.2)
+            idx += 1
+        padding, strides = ('same', (stride, stride))
+        conv = tf.layers.conv2d_transpose(inp, g_depths[-1], kernel, strides=strides, padding=padding)
+        o = tf.nn.tanh(conv)
 
         return o
 
@@ -39,31 +46,20 @@ def generator(x, isTrain=True, reuse=False):
 # D(x)
 def discriminator(x, isTrain=True, reuse=False):
     with tf.variable_scope('discriminator', reuse=reuse):
-        # 1st hidden layer
-        conv1 = tf.layers.conv2d(x, 128, [4, 4], strides=(2, 2), padding='same')
-        lrelu1 = lrelu(conv1, 0.2)
+        idx = 0
+        inp = x
+        for depth in d_depths[:-1]:
+            conv = tf.layers.conv2d(inp, depth, kernel, strides=(stride, stride), padding='same')
+            inp = lrelu(conv, 0.2) if idx == 0 else lrelu(tf.layers.batch_normalization(conv, training=isTrain), 0.2)
+            idx += 1
+        conv = tf.layers.conv2d(inp, d_depths[-1], kernel, strides=(1, 1), padding='valid')
+        o = tf.nn.sigmoid(conv)
 
-        # 2nd hidden layer
-        conv2 = tf.layers.conv2d(lrelu1, 256, [4, 4], strides=(2, 2), padding='same')
-        lrelu2 = lrelu(tf.layers.batch_normalization(conv2, training=isTrain), 0.2)
-
-        # 3rd hidden layer
-        conv3 = tf.layers.conv2d(lrelu2, 512, [4, 4], strides=(2, 2), padding='same')
-        lrelu3 = lrelu(tf.layers.batch_normalization(conv3, training=isTrain), 0.2)
-
-        # 4th hidden layer
-        conv4 = tf.layers.conv2d(lrelu3, 1024, [4, 4], strides=(2, 2), padding='same')
-        lrelu4 = lrelu(tf.layers.batch_normalization(conv4, training=isTrain), 0.2)
-
-        # output layer
-        conv5 = tf.layers.conv2d(lrelu4, 1, [4, 4], strides=(1, 1), padding='valid')
-        o = tf.nn.sigmoid(conv5)
-
-        return o, conv5
+        return o, conv
 
 
-fixed_z_ = np.random.normal(0, 1, (25, 1, 1, 100))
-def show_result(num_epoch, show = False, save = False, path = 'result.png'):
+fixed_z_ = np.random.normal(0, 1, (25, 1, 1, z_size))
+def show_result(num_epoch, show=False, save=False, path='result.png'):
     test_images = sess.run(G_z, {z: fixed_z_, isTrain: False})
 
     size_figure_grid = 5
@@ -76,7 +72,7 @@ def show_result(num_epoch, show = False, save = False, path = 'result.png'):
         i = k // size_figure_grid
         j = k % size_figure_grid
         ax[i, j].cla()
-        ax[i, j].imshow(np.reshape(test_images[k], (64, 64)), cmap='gray')
+        ax[i, j].imshow(np.reshape(test_images[k], img_dim), cmap='gray')
 
     label = 'Epoch {0}'.format(num_epoch)
     fig.text(0.5, 0.04, label, ha='center')
@@ -90,7 +86,7 @@ def show_result(num_epoch, show = False, save = False, path = 'result.png'):
         plt.close()
 
 
-def show_train_hist(hist, show = False, save = False, path = 'Train_hist.png'):
+def show_train_hist(hist, show=False, save=False, path='Train_hist.png'):
     x = range(len(hist['D_losses']))
 
     y1 = hist['D_losses']
@@ -114,17 +110,13 @@ def show_train_hist(hist, show = False, save = False, path = 'Train_hist.png'):
     else:
         plt.close()
 
-# training parameters
-batch_size = 100
-lr = 0.0002
-train_epoch = 20
 
 # load MNIST
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True, reshape=[])
 
 # variables : input
-x = tf.placeholder(tf.float32, shape=(None, 64, 64, 1))
-z = tf.placeholder(tf.float32, shape=(None, 1, 1, 100))
+x = tf.placeholder(tf.float32, shape=(None, img_dim[0], img_dim[1], 1))
+z = tf.placeholder(tf.float32, shape=(None, 1, 1, z_size))
 isTrain = tf.placeholder(dtype=tf.bool)
 
 # networks : generator
@@ -147,6 +139,7 @@ G_vars = [var for var in T_vars if var.name.startswith('generator')]
 
 # optimizer for each network
 with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
+    #TODO sta je ovaj beta1 ?
     D_optim = tf.train.AdamOptimizer(lr, beta1=0.5).minimize(D_loss, var_list=D_vars)
     G_optim = tf.train.AdamOptimizer(lr, beta1=0.5).minimize(G_loss, var_list=G_vars)
 
@@ -155,7 +148,7 @@ sess = tf.InteractiveSession()
 tf.global_variables_initializer().run()
 
 # MNIST resize and normalization
-train_set = tf.image.resize_images(mnist.train.images, [64, 64]).eval()
+train_set = tf.image.resize_images(mnist.train.images, [img_dim[0], img_dim[1]]).eval()
 train_set = (train_set - 0.5) / 0.5  # normalization; range: -1 ~ 1
 
 # results save folder
@@ -183,13 +176,13 @@ for epoch in range(train_epoch):
     for iter in range(mnist.train.num_examples // batch_size):
         # update discriminator
         x_ = train_set[iter*batch_size:(iter+1)*batch_size]
-        z_ = np.random.normal(0, 1, (batch_size, 1, 1, 100))
+        z_ = np.random.normal(0, 1, (batch_size, 1, 1, z_size))
 
         loss_d_, _ = sess.run([D_loss, D_optim], {x: x_, z: z_, isTrain: True})
         D_losses.append(loss_d_)
 
         # update generator
-        z_ = np.random.normal(0, 1, (batch_size, 1, 1, 100))
+        z_ = np.random.normal(0, 1, (batch_size, 1, 1, z_size))
         loss_g_, _ = sess.run([G_loss, G_optim], {z: z_, x: x_, isTrain: True})
         G_losses.append(loss_g_)
 

@@ -1,0 +1,14 @@
+1,1,100 -> (1024, [4,4], (1,1), valid) -> 4,4,1024 -> (512, [4,4], (2,2), same) -> 8,8,512
+1,1,100 -> (1024, [4,4], (1,1), valid) -> 4,4,1024 -> (512, [4,4], (1,1), same) -> 4,4,512
+1,1,100 -> (1024, [4,4], (1,1), valid) -> 4,4,1024 -> (512, [4,4], (1,1), valid) -> 7,7,512
+1,1,100 -> (1024, [4,4], (1,1), valid) -> 4,4,1024 -> (512, [4,4], (2,2), valid) -> 10,10,512
+
+-> ako je padding=same i stride=1 onda dimenzije ostaju iste
+-> ako je padding=same i stride=3 onda se dimenzije množe sa 3
+-> ako je padding=valid onda rezultat ima veze sa veličinom kernela i stride-a
+
+-> kod generatora kernel, valid i stride=1 prebaci 1x1 ulaz u kxk izlaz
+-> kod diskriminatora kernel, valid i stride=1 znači da prethodni izlaz mora bit veličine kernela da bi konačni izlaz mogao bit 1x1
+
+
+-> kod ovih konvolucijskih mogu se igrat sa promjenama dimenzija dubina kroz mrežu i sa promjenama dimenzija kroz mrežu. bitno je da pomoću varijabli kernela, stridea i paddinga dođem od početne 1x1 do krajnje nxm dimenzija (generator) ili od početne nxm do krajnje 1x1 dimenzije (diskriminator)

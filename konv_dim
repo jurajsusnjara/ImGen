@@ -1,0 +1,39 @@
+http://deeplearning.net/software/theano/tutorial/conv_arithmetic.html
+
+s - stride
+p - padding
+i - input
+k - kernel
+
+Convolution:
+
+> No padding, stride 1
+	o = (i - k) + 1
+> p paddinga sa svake strane, stride 1
+	o = (i - k) + 2p + 1
+> half (SAME) padding, stride 1
+	o = i
+> full padding, stride 1
+	o = i + (k - 1)
+> no padding, stride != 1
+	o = |_ (i - k)/s _| + 1
+> p paddinga sa svake strane, stride != 1
+	o = |_ (i + 2p - k)/s _| + 1
+
+Transposed convolution:
+
+> no padding, stride = 1
+	o = i + (k - 1)
+> p paddinga sa svake strane, stride = 1
+	o = i + (k - 1) - 2p
+> half (SAME) padding, stride = 1
+	o = i
+> full padding, stride = 1
+	o = i - (k - 1)
+> no padding, stride != 1
+	o = s(i - 1) + k
+> zero padding, stride != 1 (a - nule između inputa)
+	o = s(i - 1) + k - 2p + a (moze a i ne mora bit tu)
+
+
+
