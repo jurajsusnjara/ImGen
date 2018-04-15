@@ -10,6 +10,7 @@ def lrelu(x, th=0.2):
     return tf.maximum(th * x, x)
 
 
+# Read config
 cfg.parse_config('config.cfg')
 batch_size = int(cfg.config['dcgan']['batch_size'])
 lr = float(cfg.config['dcgan']['lr'])
@@ -127,6 +128,8 @@ D_real, D_real_logits = discriminator(x, isTrain)
 D_fake, D_fake_logits = discriminator(G_z, isTrain, reuse=True)
 
 # loss for each network
+# cross entropy with logits se koristi radi numericke stabilnosti + kad gledamo to u odnosu na labele jedinice ili nule
+# onda se dobije prakticki ista stvar ko u mnist_gan u izrazima: (1 - nest) ili (nesto)
 D_loss_real = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_real_logits, labels=tf.ones([batch_size, 1, 1, 1])))
 D_loss_fake = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.zeros([batch_size, 1, 1, 1])))
 D_loss = D_loss_real + D_loss_fake
