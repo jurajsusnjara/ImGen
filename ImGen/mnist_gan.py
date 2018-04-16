@@ -29,8 +29,10 @@ def generator(x, layers):
     for layer in layers:
         w = tf.get_variable('G_w' + str(idx), [h.get_shape()[1], layer], initializer=w_init)
         b = tf.get_variable('G_b' + str(idx), [layer], initializer=b_init)
-        # TODO h = tf.nn.tanh(tf.matmul(h, w) + b) if idx == len(layers)-1 else tf.nn.relu(tf.matmul(h, w) + b)
-        h = tf.nn.sigmoid(tf.matmul(h, w) + b) if idx == len(layers)-1 else tf.nn.relu(tf.matmul(h, w) + b)
+        if idx == len(layers)-1:
+            h = tf.nn.tanh(tf.matmul(h, w) + b)
+        else:
+            h = tf.nn.relu(tf.matmul(h, w) + b)
         idx += 1
 
     return h
@@ -112,16 +114,11 @@ def show_train_hist(hist, show = False, save = False, path = 'Train_hist.png'):
         plt.close()
 
 
-# training parameters
-# batch_size = 100
-# lr = 0.0002
-# train_epoch = 10
-
 # load MNIST
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
-# train_set = (mnist.train.images - 0.5) / 0.5  # normalization; range: -1 ~ 1
+train_set = (mnist.train.images - 0.5) / 0.5  # normalization; range: -1 ~ 1
 # TODO [-1,1] vs [0,1] ?
-train_set = mnist.train.images
+# train_set = mnist.train.images
 
 # networks : generator[1024, 512, 256, 1]
 with tf.variable_scope('G'):

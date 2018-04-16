@@ -2,6 +2,11 @@ BILJEŠKE:
 
 
 > ZAŠTO [0,1] faila dok [-1,1] radi super ?
+> tanh vs sigmoid na izlazu generatora ?
+
+> nema veze šta sve prije nizamo relu, na kraju će se zadnji cijeli pozitivni izlaz iz relu (h) sudjelovat u h*w+b i to će postat ulaz za tanh i izlaz će opet bit [-1,1]
+
+> TODO izvrtit na cloudu 50 epoha za [0,1] i za [-1, 1]
 
 
 
