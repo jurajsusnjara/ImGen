@@ -1,5 +1,13 @@
 BILJEŠKE:
 
+TODO:
+Improved techniques for training GANs: https://arxiv.org/pdf/1606.03498.pdf
+> U radu je opisano kako savršeno istrenirat MNIST i CIFAR-10
+> Pokušat natjerat savršenu reprodukciju tih datasetova i opisat kako sam od osnovnih metoda (samo puknuo običnu konvolucijku i trenirao) došao do toga da super radi.
+	> Osnovna metoda očito ne radi kao što se može vidit iz MNIST_DCGAN koje sam 
+	trenirao 30 epoha i počeo je divergirat
+	> Potrebno uvalit neki semi-supervised learning
+	> Ne može se GAN samo tako pustit da se trenira
 
 -------------------------------------------------------------------------------------------------
 
@@ -10,7 +18,7 @@ SIGMOID VS TANH
 
 > nema veze šta sve prije nizamo relu, na kraju će se zadnji cijeli pozitivni izlaz iz relu (h) sudjelovat u h*w+b i to će postat ulaz za tanh i izlaz će opet bit [-1,1]
 
-> TODO izvrtit na cloudu 50 epoha za [0,1] i za [-1, 1]
+> TODO izvrtit na cloudu 30 epoha za sigmoid DCGAN
 
 > RJEŠENJE: treniranje sa [0,1] overfita GAN, diskriminator postane predobar. Treba bolje izbalansirat izmjenično treniranje G i D.
 	> Poboljšanje treniranja GAN-ova (https://arxiv.org/pdf/1606.03498.pdf)

@@ -12,3 +12,6 @@ https://towardsdatascience.com/implementing-a-generative-adversarial-network-gan
 
 DCGAN MNIST
 https://github.com/znxlwm/tensorflow-MNIST-GAN-DCGAN
+
+IMPROVED TECHNIQUES FOR TRAINING GANs
+https://arxiv.org/pdf/1606.03498.pdf

@@ -142,7 +142,6 @@ G_vars = [var for var in T_vars if var.name.startswith('generator')]
 
 # optimizer for each network
 with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
-    #TODO sta je ovaj beta1 ?
     D_optim = tf.train.AdamOptimizer(lr, beta1=0.5).minimize(D_loss, var_list=D_vars)
     G_optim = tf.train.AdamOptimizer(lr, beta1=0.5).minimize(G_loss, var_list=G_vars)
 
