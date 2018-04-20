@@ -1,20 +1,29 @@
 BILJEŠKE:
 
 
+-------------------------------------------------------------------------------------------------
+
+SIGMOID VS TANH
 > ZAŠTO [0,1] faila dok [-1,1] radi super ?
 > tanh vs sigmoid na izlazu generatora ?
+> overfit ?
 
 > nema veze šta sve prije nizamo relu, na kraju će se zadnji cijeli pozitivni izlaz iz relu (h) sudjelovat u h*w+b i to će postat ulaz za tanh i izlaz će opet bit [-1,1]
 
 > TODO izvrtit na cloudu 50 epoha za [0,1] i za [-1, 1]
 
+> RJEŠENJE: treniranje sa [0,1] overfita GAN, diskriminator postane predobar. Treba bolje izbalansirat izmjenično treniranje G i D.
+	> Poboljšanje treniranja GAN-ova (https://arxiv.org/pdf/1606.03498.pdf)
 
+--------------------------------------------------------------------------------------------------
 
 > opisat MNIST dataset, kolko ima slika i tako
 > trenirat mnist s gan-om i dcgan-om. unutar svakog vidit koji parametri najbolje odgovaraju (slojevi, relu/tanh/sigmoid, dropout, z_dim...). onda međusobno usporedit najbolje od gan-a i najbolje od dcgan-a.
 > zašto ADAM optimizer ?
 > zaključak da je dcgan bolji i koristit će se za druge slike
 > kad ubacim neke kompleksnije slike rezultati mogu bit dosta loši, radi toga treba posegnut za nekim naprednijim tehnikama treniranja dcgan-ova ko šta je opisano u onom norveškom radu. npr dodavat šum u ulazne slike itd.
+
+--------------------------------------------------------------------------------------------------
 
 TESTIRANJE/EVALUACIJA (pitat mentora kolko i kako testirat !!!)
 > splitat dataset na train i test pa onda u one grafove s greškama uvalit i test i train vrijednosti ?
@@ -31,3 +40,5 @@ TESTIRANJE/EVALUACIJA (pitat mentora kolko i kako testirat !!!)
 	https://towardsdatascience.com/batch-normalization-in-neural-networks-1ac91516821c
 	https://gab41.lab41.org/batch-normalization-what-the-hey-d480039a9e3b
 > što je dropout i zašto ga koristit
+
+----------------------------------------------------------------------------------------------------
