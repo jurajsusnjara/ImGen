@@ -148,7 +148,7 @@ sess = tf.InteractiveSession()
 tf.global_variables_initializer().run()
 
 # load cifar 10
-train_set = cifar10.get_class_images(5)
+train_set = cifar10.get_class_images()
 
 # results save folder
 root = 'Cifar10_DCGAN_results/'

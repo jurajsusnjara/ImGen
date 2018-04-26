@@ -14,7 +14,7 @@ def plot_img(img):
     plt.show()
 
 
-def get_class_images(selected_cls, dir='cifar-10'):
+def get_class_images(selected_cls='all', dir='cifar-10'):
     images = []
     classes = []
     for fname in os.listdir(dir):
@@ -31,6 +31,9 @@ def get_class_images(selected_cls, dir='cifar-10'):
 
     images = np.concatenate(images, axis=0)
     classes = np.concatenate(classes, axis=0)
+
+    if selected_cls == 'all':
+        return images
 
     selected_images = []
     for img, cls in zip(images, classes):
