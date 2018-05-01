@@ -2,180 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebecd15d-9e31-4e66-9fb1-6f9e6a876f4e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/image_reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10_dcgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/cifar10_dcgan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/config.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/CIFAR10_DCGAN_generation_animation.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/CIFAR10_DCGAN_train_hist.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/CIFAR10_DCGAN_train_hist.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/Fixed_results/CIFAR10_DCGAN_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/Fixed_results/CIFAR10_DCGAN_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/Fixed_results/CIFAR10_DCGAN_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/Fixed_results/CIFAR10_DCGAN_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/Fixed_results/CIFAR10_DCGAN_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/Fixed_results/CIFAR10_DCGAN_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/Fixed_results/CIFAR10_DCGAN_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/Fixed_results/CIFAR10_DCGAN_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/Fixed_results/CIFAR10_DCGAN_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5/Fixed_results/CIFAR10_DCGAN_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/CIFAR10_DCGAN_generation_animation.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/CIFAR10_DCGAN_train_hist.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/CIFAR10_DCGAN_train_hist.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_61.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_62.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_63.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_65.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_66.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_67.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_68.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_69.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7/Fixed_results/CIFAR10_DCGAN_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_61.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_62.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_63.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_65.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_66.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_67.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_68.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_69.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_71.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_73.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_74.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_75.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_76.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_77.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_78.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_79.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_81.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_82.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5/Fixed_results/CIFAR10_DCGAN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_reader.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -187,8 +14,8 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ImGen$mnist_example.coverage" NAME="mnist_example Coverage Results" MODIFIED="1524216670225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$config.coverage" NAME="config Coverage Results" MODIFIED="1522000107357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ImGen$cifar10_dcgan.coverage" NAME="cifar10_dcgan Coverage Results" MODIFIED="1525168486529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$img_reader.coverage" NAME="img_reader Coverage Results" MODIFIED="1525182214077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ImGen$cifar10_dcgan.coverage" NAME="cifar10_dcgan Coverage Results" MODIFIED="1525188433392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$hello.coverage" NAME="hello Coverage Results" MODIFIED="1522422002315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$mnist_dcgan.coverage" NAME="mnist_dcgan Coverage Results" MODIFIED="1523799600155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$mnist_gan.coverage" NAME="mnist_gan Coverage Results" MODIFIED="1523910796746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -214,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="image_reader.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="image_reader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image_reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+            <state relative-caret-position="458">
+              <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -226,11 +53,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cifar10_dcgan.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cifar10_dcgan.py">
+      <file leaf-file-name="dcgan.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dcgan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            <state relative-caret-position="160">
+              <caret line="77" column="9" lean-forward="true" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -337,7 +167,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.img_reader">
+  <component name="RunManager" selected="Python.cifar10_dcgan">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="ImGen" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -461,8 +291,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.img_reader" />
         <item itemvalue="Python.cifar10_dcgan" />
+        <item itemvalue="Python.img_reader" />
         <item itemvalue="Python.cifar10" />
         <item itemvalue="Python.read_cifar10" />
         <item itemvalue="Python.mnist_example" />
@@ -492,9 +322,9 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32948583" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39664218" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39664218" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32948583" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49947533" visible="true" weight="0.21503593" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49947533" visible="true" weight="0.21503593" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32946378" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32946378" />
@@ -518,7 +348,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="61" />
+      <option name="time" value="62" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -674,19 +504,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cifar10_dcgan.py">
+    <entry file="file://$PROJECT_DIR$/image_reader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="458">
+          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image_reader.py">
+    <entry file="file://$PROJECT_DIR$/dcgan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        <state relative-caret-position="160">
+          <caret line="77" column="9" lean-forward="true" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>

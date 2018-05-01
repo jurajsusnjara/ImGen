@@ -51,8 +51,18 @@ def load_img(fname):
 
 def get_images(dir):
     imgs = []
+    idx = 0
     for fname in os.listdir(dir):
-        imgs.append(load_img(fname))
+        if idx == 5000:
+            break
+        idx += 1
+        img = None
+        try:
+            img = load_img(dir + '/' + fname)
+        except:
+            print('Cannot load:', fname)
+        if img is not None:
+            imgs.append(img)
     return imgs
 
 
