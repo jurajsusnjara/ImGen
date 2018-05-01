@@ -212,3 +212,5 @@ for e in range(train_epoch):
 imageio.mimsave(root + model + 'generation_animation.gif', images, fps=5)
 
 sess.close()
+
+# TODO ubacit spremanje mreže

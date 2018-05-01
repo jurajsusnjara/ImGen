@@ -61,7 +61,8 @@ def get_images(dir):
             img = load_img(dir + '/' + fname)
         except:
             print('Cannot load:', fname)
-        if img is not None:
+        # TODO uklonit hardcodiranu provjeru dimenzije, stavit nesto elegantnije
+        if img is not None and img.shape == (128, 128, 3):
             imgs.append(img)
     return imgs
 
