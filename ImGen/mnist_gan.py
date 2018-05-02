@@ -149,6 +149,7 @@ D_optim = tf.train.AdamOptimizer(lr).minimize(D_loss, var_list=D_vars)
 G_optim = tf.train.AdamOptimizer(lr).minimize(G_loss, var_list=G_vars)
 
 # open session and initialize all variables
+saver = tf.train.Saver()
 sess = tf.InteractiveSession()
 tf.global_variables_initializer().run()
 
@@ -213,4 +214,5 @@ for e in range(train_epoch):
     images.append(imageio.imread(img_name))
 imageio.mimsave('MNIST_GAN_results/generation_animation.gif', images, fps=5)
 
+saver.save(sess, "/home/juraj/Desktop/model.ckpt")
 sess.close()

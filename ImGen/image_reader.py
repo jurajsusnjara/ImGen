@@ -49,11 +49,11 @@ def load_img(fname):
     return np.array(img, dtype=float) / 255.0
 
 
-def get_images(dir):
+def get_images(dir, n, shape=(128, 128, 3)):
     imgs = []
     idx = 0
     for fname in os.listdir(dir):
-        if idx == 5000:
+        if idx == n:
             break
         idx += 1
         img = None
@@ -61,8 +61,7 @@ def get_images(dir):
             img = load_img(dir + '/' + fname)
         except:
             print('Cannot load:', fname)
-        # TODO uklonit hardcodiranu provjeru dimenzije, stavit nesto elegantnije
-        if img is not None and img.shape == (128, 128, 3):
+        if img is not None and img.shape == shape:
             imgs.append(img)
     return imgs
 
@@ -93,7 +92,10 @@ def get_random_urls(fname, n):
                 urls.append(url)
             if len(urls) >= 1000000:
                 break
-    return np.random.choice(urls, n, replace=False).tolist()
+    if n == -1:
+        return urls
+    else:
+        return np.random.choice(urls, n, replace=False).tolist()
 
 
 def get_category_urls(fname, category):
@@ -128,11 +130,11 @@ def execute_url(url, idx):
 
 
 if __name__ == '__main__':
-    inp_file = '/home/juraj/Desktop/image_net_urls.txt'
-    out_dir = '/home/juraj/Desktop/image_net_preprocessed'
-    n = 100000
-    dim = (128, 128)
-    p = Pool(64)
+    inp_file = '/home/juraj/Desktop/food.txt'
+    out_dir = '/home/juraj/Desktop/image_net_food(256x256)'
+    n = -1
+    dim = (256, 256)
+    p = Pool(32)
 
     print('Getting urls')
     urls = get_random_urls(inp_file, n)

@@ -145,10 +145,14 @@ with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
     G_optim = tf.train.AdamOptimizer(lr, beta1=0.5).minimize(G_loss, var_list=G_vars)
 
 # open session and initialize all variables
+saver = tf.train.Saver()
 sess = tf.InteractiveSession()
 tf.global_variables_initializer().run()
 
-train_set = image_reader.get_images('/home/juraj/Desktop/image_net_preprocessed')
+train_set = image_reader.get_images(
+    '/home/juraj/Desktop/image_net_preprocessed',
+    5000,
+    shape=(img_dim[0], img_dim[1], 3))
 
 # results save folder
 root = 'DCGAN_results/'
@@ -211,6 +215,5 @@ for e in range(train_epoch):
     images.append(imageio.imread(img_name))
 imageio.mimsave(root + model + 'generation_animation.gif', images, fps=5)
 
+saver.save(sess, "/home/juraj/Desktop/model.ckpt")
 sess.close()
-
-# TODO ubacit spremanje mreže
