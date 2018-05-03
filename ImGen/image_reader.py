@@ -129,11 +129,20 @@ def execute_url(url, idx):
     idx += 1
 
 
+def resize_lfw(dir, out_dir, dim=(128, 128), fmt='jpeg'):
+    for root, subFolders, files in os.walk(dir):
+        for f in files:
+            print(f)
+            fname = root + '/' + f
+            img = Image.open(fname)
+            resize_and_save(img, dim, out_dir + '/' + f, fmt)
+
+
 if __name__ == '__main__':
     inp_file = '/home/juraj/Desktop/food.txt'
-    out_dir = '/home/juraj/Desktop/image_net_food(256x256)'
+    out_dir = '/home/juraj/Desktop/image_net_food(64x64)'
     n = -1
-    dim = (256, 256)
+    dim = (64, 64)
     p = Pool(32)
 
     print('Getting urls')

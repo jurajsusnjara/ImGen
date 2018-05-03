@@ -62,8 +62,13 @@ def discriminator(x, isTrain=True, reuse=False):
 
 
 fixed_z_ = np.random.normal(0, 1, (25, 1, 1, z_size))
-def show_result(num_epoch, show=False, save=False, path='result.png'):
-    test_images = sess.run(G_z, {z: fixed_z_, isTrain: False})
+def show_result(num_epoch, show=False, save=False, path='result.png', isFix=False):
+    z_ = np.random.normal(0, 1, (25, 1, 1, z_size))
+
+    if isFix:
+        test_images = sess.run(G_z, {z: fixed_z_, isTrain: False})
+    else:
+        test_images = sess.run(G_z, {z: z_, isTrain: False})
 
     size_figure_grid = 5
     fig, ax = plt.subplots(size_figure_grid, size_figure_grid, figsize=(5, 5))
@@ -161,6 +166,8 @@ if not os.path.isdir(root):
     os.mkdir(root)
 if not os.path.isdir(root + 'Fixed_results'):
     os.mkdir(root + 'Fixed_results')
+if not os.path.isdir(root + 'Random_results'):
+    os.mkdir(root + 'Random_results')
 
 train_hist = {}
 train_hist['D_losses'] = []
@@ -193,7 +200,9 @@ for epoch in range(train_epoch):
     per_epoch_ptime = epoch_end_time - epoch_start_time
     print('[%d/%d] - ptime: %.2f loss_d: %.3f, loss_g: %.3f' % ((epoch + 1), train_epoch, per_epoch_ptime, np.mean(D_losses), np.mean(G_losses)))
     fixed_p = root + 'Fixed_results/' + model + str(epoch + 1) + '.png'
-    show_result((epoch + 1), save=True, path=fixed_p)
+    p = root + 'Random_results/' + model + str(epoch + 1) + '.png'
+    show_result((epoch + 1), save=True, path=fixed_p, isFix=True)
+    show_result((epoch + 1), save=True, path=p, isFix=False)
     train_hist['D_losses'].append(np.mean(D_losses))
     train_hist['G_losses'].append(np.mean(G_losses))
     train_hist['per_epoch_ptimes'].append(per_epoch_ptime)
