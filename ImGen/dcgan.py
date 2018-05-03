@@ -25,6 +25,7 @@ d_strides = [int(el) for el in cfg.config['dcgan']['d_strides'].split(',')]
 z_size = int(cfg.config['dcgan']['z_size'])
 img_dim_str = cfg.config['dcgan']['img_dim'].split('x')
 img_dim = (int(img_dim_str[0]), int(img_dim_str[1]))
+return_layer = int(cfg.config['dcgan']['return_layer'])
 
 
 # G(z)
@@ -47,13 +48,15 @@ def generator(x, isTrain=True, reuse=False):
 
 
 # D(x)
-def discriminator(x, isTrain=True, reuse=False):
+def discriminator(x, isTrain=True, reuse=False, return_layer=-1):
     with tf.variable_scope('discriminator', reuse=reuse):
         idx = 0
         inp = x
         for depth, stride in zip(d_depths[:-1], d_strides[:-1]):
             conv = tf.layers.conv2d(inp, depth, kernel, strides=(stride, stride), padding='same')
             inp = lrelu(conv, 0.2) if idx == 0 else lrelu(tf.layers.batch_normalization(conv, training=isTrain), 0.2)
+            if idx == return_layer:
+                return inp, conv
             idx += 1
         conv = tf.layers.conv2d(inp, d_depths[-1], kernel, strides=(d_strides[-1], d_strides[-1]), padding='valid')
         o = tf.nn.sigmoid(conv)
@@ -131,13 +134,20 @@ G_z = generator(z, isTrain)
 D_real, D_real_logits = discriminator(x, isTrain)
 D_fake, D_fake_logits = discriminator(G_z, isTrain, reuse=True)
 
+# discriminator activations
+D_real_act, D_real_act_ = discriminator(x, isTrain, return_layer=return_layer, reuse=True)
+D_fake_act, D_fake_act_ = discriminator(G_z, isTrain, return_layer=return_layer, reuse=True)
+
+
 # loss for each network
 # cross entropy with logits se koristi radi numericke stabilnosti + kad gledamo to u odnosu na labele jedinice ili nule
 # onda se dobije prakticki ista stvar ko u mnist_gan u izrazima: (1 - nest) ili (nesto)
 D_loss_real = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_real_logits, labels=tf.ones([batch_size, 1, 1, 1])))
 D_loss_fake = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.zeros([batch_size, 1, 1, 1])))
 D_loss = D_loss_real + D_loss_fake
-G_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.ones([batch_size, 1, 1, 1])))
+# G_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.ones([batch_size, 1, 1, 1])))
+G_loss = tf.norm(D_real_act - D_fake_act)
+
 
 # trainable variables for each network
 T_vars = tf.trainable_variables()
@@ -155,8 +165,8 @@ sess = tf.InteractiveSession()
 tf.global_variables_initializer().run()
 
 train_set = image_reader.get_images(
-    '/home/juraj/Desktop/image_net_preprocessed',
-    5000,
+    '/home/juraj/Desktop/image_net/image_net_food(128x128)',
+    2000,
     shape=(img_dim[0], img_dim[1], 3))
 
 # results save folder
