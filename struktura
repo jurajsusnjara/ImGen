@@ -1,0 +1,20 @@
+STRUKTURA
+
+Uvod
+
+Duboko učenje
+	Konvolucijske mreže
+	Autoenkoderi
+	Generativni modeli
+	Diskriminativni modeli
+
+Radni okviri za duboko učenje
+	# cuda, gpu, tensorflow ...
+
+Postojeći modeli za stvaranje slika
+	# istražit šta već postoji
+
+Implementacija i vrednovanje
+
+Zaključak
+
