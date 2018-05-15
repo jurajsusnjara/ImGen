@@ -115,5 +115,7 @@ for i in range(2000):
         imgs = [np.reshape(imgs[i], [28, 28]) for i in range(len(imgs))]
         show_result(imgs, res_dir + '/img_' + str(i) + '.jpg')
 
-#TODO spremit istrenirani model i igrat se
-# TODO ao zelim ispisat npr 5 greska bude na 4 il 6 ?
+# TODO spremit istrenirani model i igrat se
+# TODO ako zelim ispisat npr 5 greska bude na 4 il 6 ?
+
+# TODO poopcit na bilo kakve slike + odabir VAE/CVAE

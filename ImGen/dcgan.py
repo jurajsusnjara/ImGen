@@ -236,3 +236,7 @@ imageio.mimsave(root + model + 'generation_animation.gif', images, fps=5)
 
 saver.save(sess, "/home/juraj/Desktop/model.ckpt")
 sess.close()
+
+# TODO CDCGAN
+
+# TODO spremanje težina
