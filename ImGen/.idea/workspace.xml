@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebecd15d-9e31-4e66-9fb1-6f9e6a876f4e" name="Default" comment="Feature matching loss.">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vae.py" beforeDir="false" afterPath="$PROJECT_DIR$/vae.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_1.png" beforeDir="false" />
@@ -549,7 +548,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ImGen$mnist_example.coverage" NAME="mnist_example Coverage Results" MODIFIED="1524216670225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$config.coverage" NAME="config Coverage Results" MODIFIED="1522000107357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ImGen$vae.coverage" NAME="vae Coverage Results" MODIFIED="1527085055124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ImGen$vae.coverage" NAME="vae Coverage Results" MODIFIED="1527089027925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$img_reader.coverage" NAME="img_reader Coverage Results" MODIFIED="1525182214077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$cifar10_dcgan.coverage" NAME="cifar10_dcgan Coverage Results" MODIFIED="1525428850704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$hello.coverage" NAME="hello Coverage Results" MODIFIED="1526412417552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -581,8 +580,8 @@
       <file leaf-file-name="vae.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vae.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+            <state relative-caret-position="225">
+              <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -888,7 +887,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525544552117</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="cvae/vae flag">
+      <created>1527086132467</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1527086132467</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -901,9 +907,9 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32948583" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.45435467" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45435467" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32948583" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49947533" visible="true" weight="0.2299613" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49947533" visible="true" weight="0.2299613" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32946378" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32946378" />
@@ -955,7 +961,8 @@
     <MESSAGE value="Feature matching loss." />
     <MESSAGE value="Autoencoder and loading session added." />
     <MESSAGE value="TODO added" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO added" />
+    <MESSAGE value="cvae/vae flag" />
+    <option name="LAST_COMMIT_MESSAGE" value="cvae/vae flag" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -966,7 +973,7 @@
           <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="111" />
+      <option name="time" value="112" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1185,9 +1192,6 @@
     <entry file="file://$PROJECT_DIR$/MNIST_CVAE_results_2000_batches/img_1400.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MNIST_CVAE_results_2000_batches/img_1900.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/MNIST_VAE_results_2000_batches/img_1900.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1203,10 +1207,16 @@
     <entry file="file://$PROJECT_DIR$/MNIST_VAE_results/img_10.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_VAE_results/img_90.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_CVAE_results_2000_batches/img_1900.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/vae.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+        <state relative-caret-position="225">
+          <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

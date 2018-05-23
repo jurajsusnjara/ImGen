@@ -95,19 +95,25 @@ unreshaped = tf.reshape(dec, [-1, 28*28])
 img_loss = tf.reduce_sum(tf.squared_difference(unreshaped, Y_flat), 1)
 latent_loss = -0.5 * tf.reduce_sum(1.0 + 2.0 * sd - tf.square(mn) - tf.exp(2.0 * sd), 1)
 loss = tf.reduce_mean(img_loss + latent_loss)
-tf.summary.scalar('loss', loss)
 optimizer = tf.train.AdamOptimizer(0.0005).minimize(loss)
+tf.summary.scalar('loss', loss)
+tf.summary.scalar('img_loss', tf.reduce_mean(img_loss))
+tf.summary.scalar('latent_loss', tf.reduce_mean(latent_loss))
+
 sess = tf.Session()
+merged = tf.summary.merge_all()
+writer = tf.summary.FileWriter('summary', sess.graph)
 sess.run(tf.global_variables_initializer())
 
-for i in range(200):
+for i in range(50):
     batch, labels = mnist.train.next_batch(batch_size=batch_size)
     batch = [np.reshape(b, [28, 28]) for b in batch]
     labels = [l for l in np.eye(57)[labels.reshape(-1)]]
     sess.run(optimizer, feed_dict={X_in: batch, condition: labels, Y: batch, keep_prob: 0.8})
 
-    ls, d, i_ls, d_ls, mu, sigm = sess.run([loss, dec, img_loss, latent_loss, mn, sd],
+    summary, ls, d, i_ls, d_ls, mu, sigm = sess.run([merged, loss, dec, img_loss, latent_loss, mn, sd],
                                                feed_dict={X_in: batch, condition: labels, Y: batch, keep_prob: 1.0})
+    writer.add_summary(summary, i)
     print(i, ':', 'Loss', ls, 'Image loss', np.mean(i_ls), 'Latent loss', np.mean(d_ls))
     if i % 10 == 0:
         randoms = [np.random.normal(0, 1, n_latent) for _ in range(25)]
@@ -118,7 +124,3 @@ for i in range(200):
         imgs = [np.reshape(imgs[i], [28, 28]) for i in range(len(imgs))]
         show_result(imgs, res_dir + '/img_' + str(i) + '.jpg')
 
-# TODO spremit istrenirani model i igrat se
-# TODO ako zelim ispisat npr 5 greska bude na 4 il 6 ?
-
-# TODO poopcit na bilo kakve slike + odabir VAE/CVAE
