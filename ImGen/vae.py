@@ -30,11 +30,12 @@ mnist = input_data.read_data_sets('MNIST_data')
 tf.reset_default_graph()
 
 batch_size = 64
+use_condition = False
 
 X_in = tf.placeholder(dtype=tf.float32, shape=[None, 28, 28], name='X')
 X_flat = tf.reshape(X_in, shape=[-1, 28 * 28], name='X_flat')
 condition = tf.placeholder(dtype=tf.float32, shape=[None, 57], name='cond')
-inp = tf.concat([X_flat, condition], axis=1, name='input')  # 29x29
+inp = tf.concat([X_flat, condition], axis=1, name='input') if use_condition else X_flat
 
 Y = tf.placeholder(dtype=tf.float32, shape=[None, 28, 28], name='Y')
 Y_flat = tf.reshape(Y, shape=[-1, 28 * 28])
@@ -52,7 +53,8 @@ res_dir = 'MNIST_VAE_results'
 def encoder(inp, keep_prob):
     activation = lrelu
     with tf.variable_scope("encoder", reuse=None):
-        inp = tf.reshape(inp, shape=[-1, 29, 29, 1])
+        shp = [-1, 29, 29, 1] if use_condition else [-1, 28, 28, 1]
+        inp = tf.reshape(inp, shape=shp)
         x = tf.layers.conv2d(inp, filters=64, kernel_size=4, strides=2, padding='same', activation=activation)
         x = tf.nn.dropout(x, keep_prob)
         x = tf.layers.conv2d(x, filters=64, kernel_size=4, strides=2, padding='same', activation=activation)
@@ -86,18 +88,19 @@ def decoder(sampled_z, keep_prob):
 
 
 sampled, mn, sd = encoder(inp, keep_prob)
-z_cond = tf.concat([sampled, condition], axis=1, name='z_cond')
-dec = decoder(z_cond, keep_prob)
+z = tf.concat([sampled, condition], axis=1, name='z_cond') if use_condition else sampled
+dec = decoder(z, keep_prob)
 
 unreshaped = tf.reshape(dec, [-1, 28*28])
 img_loss = tf.reduce_sum(tf.squared_difference(unreshaped, Y_flat), 1)
 latent_loss = -0.5 * tf.reduce_sum(1.0 + 2.0 * sd - tf.square(mn) - tf.exp(2.0 * sd), 1)
 loss = tf.reduce_mean(img_loss + latent_loss)
+tf.summary.scalar('loss', loss)
 optimizer = tf.train.AdamOptimizer(0.0005).minimize(loss)
 sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
-for i in range(2000):
+for i in range(200):
     batch, labels = mnist.train.next_batch(batch_size=batch_size)
     batch = [np.reshape(b, [28, 28]) for b in batch]
     labels = [l for l in np.eye(57)[labels.reshape(-1)]]
@@ -106,7 +109,7 @@ for i in range(2000):
     ls, d, i_ls, d_ls, mu, sigm = sess.run([loss, dec, img_loss, latent_loss, mn, sd],
                                                feed_dict={X_in: batch, condition: labels, Y: batch, keep_prob: 1.0})
     print(i, ':', 'Loss', ls, 'Image loss', np.mean(i_ls), 'Latent loss', np.mean(d_ls))
-    if i % 100 == 0:
+    if i % 10 == 0:
         randoms = [np.random.normal(0, 1, n_latent) for _ in range(25)]
         r = np.random.choice(10)
         print('Images', i, ':', r)

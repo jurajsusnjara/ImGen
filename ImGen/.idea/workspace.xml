@@ -1,9 +1,505 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebecd15d-9e31-4e66-9fb1-6f9e6a876f4e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ebecd15d-9e31-4e66-9fb1-6f9e6a876f4e" name="Default" comment="Feature matching loss.">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vae.py" beforeDir="false" afterPath="$PROJECT_DIR$/vae.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/MNIST_DCGAN_generation_animation.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/MNIST_DCGAN_train_hist.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/MNIST_DCGAN_train_hist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/config.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results_5epoch(tanh)/Fixed_results/MNIST_DCGAN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results_5epoch(tanh)/Fixed_results/MNIST_DCGAN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results_5epoch(tanh)/Fixed_results/MNIST_DCGAN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results_5epoch(tanh)/Fixed_results/MNIST_DCGAN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results_5epoch(tanh)/Fixed_results/MNIST_DCGAN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results_5epoch(tanh)/MNIST_DCGAN_generation_animation.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results_5epoch(tanh)/MNIST_DCGAN_train_hist.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results_5epoch(tanh)/MNIST_DCGAN_train_hist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results_5epoch(tanh)/config.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Fixed_results/MNIST_GAN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/MNIST_GAN_train_hist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/Random_results/MNIST_GAN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/config.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/generation_animation.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(sigmoid)/train_hist.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Fixed_results/MNIST_GAN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/MNIST_GAN_train_hist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/Random_results/MNIST_GAN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/config.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/generation_animation.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_GAN_results(tanh)/train_hist.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_example/result.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_example/result1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_example/result2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/CIFAR10_DCGAN_generation_animation.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/CIFAR10_DCGAN_train_hist.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/CIFAR10_DCGAN_train_hist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/Fixed_results/CIFAR10_DCGAN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/Fixed_results/CIFAR10_DCGAN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/Fixed_results/CIFAR10_DCGAN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/Fixed_results/CIFAR10_DCGAN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/Fixed_results/CIFAR10_DCGAN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/Fixed_results/CIFAR10_DCGAN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/Fixed_results/CIFAR10_DCGAN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/Fixed_results/CIFAR10_DCGAN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/Fixed_results/CIFAR10_DCGAN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_10epoch_class_5_tanh/Fixed_results/CIFAR10_DCGAN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/CIFAR10_DCGAN_generation_animation.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/CIFAR10_DCGAN_train_hist.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/CIFAR10_DCGAN_train_hist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_61.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_62.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_63.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_65.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_66.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_67.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_68.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_69.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_70.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_sigmoid/Fixed_results/CIFAR10_DCGAN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/CIFAR10_DCGAN_generation_animation.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/CIFAR10_DCGAN_train_hist.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/CIFAR10_DCGAN_train_hist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_61.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_62.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_63.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_65.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_66.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_67.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_68.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_69.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_70.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_70epoch_class_7_tanh/Fixed_results/CIFAR10_DCGAN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_61.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_62.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_63.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_65.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_66.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_67.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_68.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_69.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_70.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_71.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_73.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_74.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_75.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_77.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_78.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_79.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_81.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_82.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../results/cifar10/Cifar10_DCGAN_results_class_5_tanh/Fixed_results/CIFAR10_DCGAN_9.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/img/DCGAN_results_10epoch_5k_images/DCGAN_generation_animation.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/img/DCGAN_results_10epoch_5k_images/DCGAN_train_hist.pkl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/img/DCGAN_results_10epoch_5k_images/DCGAN_train_hist.png" beforeDir="false" />
@@ -42,7 +538,6 @@
       <change beforePath="$PROJECT_DIR$/../results/img/DCGAN_results_20_epoch_50k_images/Fixed_results/DCGAN_8.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/img/DCGAN_results_20_epoch_50k_images/Fixed_results/DCGAN_9.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/img/DCGAN_results_20_epoch_50k_images/config.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ssh_cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../ssh_cmd" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,9 +549,10 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ImGen$mnist_example.coverage" NAME="mnist_example Coverage Results" MODIFIED="1524216670225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$config.coverage" NAME="config Coverage Results" MODIFIED="1522000107357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ImGen$vae.coverage" NAME="vae Coverage Results" MODIFIED="1527085055124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$img_reader.coverage" NAME="img_reader Coverage Results" MODIFIED="1525182214077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$cifar10_dcgan.coverage" NAME="cifar10_dcgan Coverage Results" MODIFIED="1525428850704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ImGen$hello.coverage" NAME="hello Coverage Results" MODIFIED="1522422002315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ImGen$hello.coverage" NAME="hello Coverage Results" MODIFIED="1526412417552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$mnist_dcgan.coverage" NAME="mnist_dcgan Coverage Results" MODIFIED="1523799600155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$mnist_gan.coverage" NAME="mnist_gan Coverage Results" MODIFIED="1523910796746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$autoencoder.coverage" NAME="autoencoder Coverage Results" MODIFIED="1525544482856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -81,49 +577,38 @@
     <favorites_list name="ImGen" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42951906">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="dcgan.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/dcgan.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="145">
-                  <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-                  <folding>
-                    <element signature="e#0#43#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="autoencoder.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/autoencoder.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="698">
-                  <caret line="65" selection-start-line="65" selection-end-line="65" />
-                  <folding>
-                    <element signature="e#0#64#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="config.cfg" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config.cfg">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="200">
-                  <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="vae.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vae.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dcgan.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dcgan.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4160">
+              <caret line="213" column="51" selection-start-line="213" selection-start-column="51" selection-end-line="213" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hello.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hello.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -158,7 +643,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/hello.py" />
         <option value="$PROJECT_DIR$/read_cifar10.py" />
         <option value="$PROJECT_DIR$/mnist_example.py" />
         <option value="$PROJECT_DIR$/mnist_dcgan.py" />
@@ -168,9 +652,11 @@
         <option value="$PROJECT_DIR$/mnist_gan.py" />
         <option value="$PROJECT_DIR$/image_reader.py" />
         <option value="$PROJECT_DIR$/config.cfg" />
-        <option value="$PROJECT_DIR$/dcgan.py" />
         <option value="$PROJECT_DIR$/load_sess.py" />
         <option value="$PROJECT_DIR$/autoencoder.py" />
+        <option value="$PROJECT_DIR$/hello.py" />
+        <option value="$PROJECT_DIR$/dcgan.py" />
+        <option value="$PROJECT_DIR$/vae.py" />
       </list>
     </option>
   </component>
@@ -231,7 +717,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.autoencoder">
+  <component name="RunManager" selected="Python.vae">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="ImGen" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -289,7 +775,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="img_reader" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="hello" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ImGen" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -302,7 +788,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/image_reader.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hello.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -327,7 +813,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="mnist_gan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="vae" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ImGen" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -340,7 +826,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mnist_gan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vae.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -348,18 +834,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.cifar10_dcgan" />
-      <item itemvalue="Python.img_reader" />
-      <item itemvalue="Python.mnist_gan" />
       <item itemvalue="Python.load_sess" />
       <item itemvalue="Python.autoencoder" />
+      <item itemvalue="Python.vae" />
+      <item itemvalue="Python.hello" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.vae" />
+        <item itemvalue="Python.hello" />
         <item itemvalue="Python.autoencoder" />
         <item itemvalue="Python.load_sess" />
         <item itemvalue="Python.cifar10_dcgan" />
-        <item itemvalue="Python.img_reader" />
-        <item itemvalue="Python.mnist_gan" />
       </list>
     </recent_temporary>
   </component>
@@ -395,22 +881,29 @@
       <option name="project" value="LOCAL" />
       <updated>1525378499655</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Autoencoder and loading session added.">
+      <created>1525544552117</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1525544552117</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <frame x="64" y="1069" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32948583" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32879582" />
       <window_info anchor="right" x="0" y="0" width="414" height="892" id="Documentation" order="5" side_tool="true" weight="0.32946378" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32948583" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.45435467" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32948583" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49947533" visible="true" weight="0.21669431" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49947533" visible="true" weight="0.2299613" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32946378" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32946378" />
@@ -429,25 +922,25 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.50052464" side_tool="true" weight="0.1973466" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49947533" visible="true" weight="0.21503593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39664218" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32948583" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.32948583" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.48373556" />
       <window_info anchor="right" x="0" y="0" width="414" height="892" id="Documentation" order="5" side_tool="true" weight="0.32946378" />
       <window_info anchor="right" id="Database" order="3" weight="0.32946378" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32948583" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32948583" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32946378" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32948583" />
-      <window_info anchor="bottom" id="Python Console" order="9" weight="0.32948583" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" sideWeight="0.50052464" side_tool="true" weight="0.1973466" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +953,9 @@
     <MESSAGE value="Model saver added." />
     <MESSAGE value="Minor fixes." />
     <MESSAGE value="Feature matching loss." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature matching loss." />
+    <MESSAGE value="Autoencoder and loading session added." />
+    <MESSAGE value="TODO added" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -471,158 +966,72 @@
           <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="76" />
+      <option name="time" value="111" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dcgan.py">
+    <entry file="file://$PROJECT_DIR$/vae.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+        <state relative-caret-position="1940">
+          <caret line="97" column="43" lean-forward="true" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoencoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1240">
-          <caret line="62" column="4" lean-forward="true" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image_reader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2460">
-          <caret line="131" column="26" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
-          <folding>
-            <element signature="e#231#306#0" />
-            <element signature="e#370#1174#0" />
-            <element signature="e#441#865#0" />
-            <element signature="e#1083#1146#0" />
-            <element signature="e#1202#1274#0" />
-            <element signature="e#1326#1668#0" />
-            <element signature="e#1390#1652#0" />
-            <element signature="e#1698#1954#0" />
-            <element signature="e#1726#1882#0" />
-            <element signature="e#2007#2071#0" />
-            <element signature="e#2109#2472#0" />
-            <element signature="e#2159#2361#0" />
-            <element signature="e#2186#2361#0" />
-            <element signature="e#2519#2777#0" />
-            <element signature="e#2569#2761#0" />
-            <element signature="e#2596#2761#0" />
-            <element signature="e#2808#2976#0" />
-            <element signature="e#2899#2961#0" />
-            <element signature="e#3010#3244#0" />
-            <element signature="e#3112#3231#0" />
-            <element signature="e#3309#3531#0" />
-            <element signature="e#3362#3531#0" />
-            <element signature="e#3390#3531#0" />
-            <element signature="e#3565#3852#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_gan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3840">
-          <caret line="192" column="25" selection-start-line="192" selection-start-column="25" selection-end-line="192" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dcgan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+        <state relative-caret-position="4260">
+          <caret line="213" column="51" selection-start-line="213" selection-start-column="51" selection-end-line="213" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image_reader.py">
+    <entry file="file://$PROJECT_DIR$/hello.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="63" column="80" selection-start-line="63" selection-start-column="80" selection-end-line="63" selection-end-column="80" />
+        <state relative-caret-position="140">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.cfg">
+    <entry file="file://$PROJECT_DIR$/vae.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="2320">
+          <caret line="120" column="52" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dcgan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4200">
-          <caret line="215" column="29" selection-start-line="215" selection-start-column="29" selection-end-line="215" selection-end-column="29" />
+        <state relative-caret-position="4160">
+          <caret line="213" column="51" lean-forward="true" selection-start-line="213" selection-start-column="51" selection-end-line="213" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image_reader.py">
+    <entry file="file://$PROJECT_DIR$/hello.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="90" column="18" lean-forward="true" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
+        <state relative-caret-position="140">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image_reader.py">
+    <entry file="file://$PROJECT_DIR$/vae.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+        <state relative-caret-position="2360">
+          <caret line="118" column="53" selection-start-line="118" selection-start-column="53" selection-end-line="118" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_gan.py">
+    <entry file="file://$PROJECT_DIR$/hello.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_gan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2660">
-          <caret line="133" column="26" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_gan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2660">
-          <caret line="133" column="26" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_dcgan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="40">
+          <caret line="2" selection-start-line="2" selection-end-line="6" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -677,7 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hello.py" />
     <entry file="file://$PROJECT_DIR$/mnist_dcgan.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="883">
@@ -690,32 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="140" column="26" selection-start-line="140" selection-start-column="26" selection-end-line="140" selection-end-column="26" />
-          <folding>
-            <element signature="e#231#306#0" />
-            <element signature="e#370#1174#0" />
-            <element signature="e#441#865#0" />
-            <element signature="e#1083#1146#0" />
-            <element signature="e#1202#1274#0" />
-            <element signature="e#1326#1668#0" />
-            <element signature="e#1390#1652#0" />
-            <element signature="e#1698#1954#0" />
-            <element signature="e#1726#1882#0" />
-            <element signature="e#2007#2071#0" />
-            <element signature="e#2109#2472#0" />
-            <element signature="e#2159#2361#0" />
-            <element signature="e#2186#2361#0" />
-            <element signature="e#2519#2777#0" />
-            <element signature="e#2569#2761#0" />
-            <element signature="e#2596#2761#0" />
-            <element signature="e#2808#2976#0" />
-            <element signature="e#2899#2961#0" />
-            <element signature="e#3010#3244#0" />
-            <element signature="e#3112#3231#0" />
-            <element signature="e#3309#3531#0" />
-            <element signature="e#3362#3531#0" />
-            <element signature="e#3390#3531#0" />
-            <element signature="e#3565#3852#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,16 +1122,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/autoencoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
+        <state relative-caret-position="924">
           <caret line="65" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
@@ -757,12 +1132,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="718">
+          <caret line="787" selection-start-line="787" selection-end-line="787" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/tensorflow/python/client/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="1373" selection-start-line="1373" selection-end-line="1373" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dcgan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+        <state relative-caret-position="4160">
+          <caret line="213" column="51" selection-start-line="213" selection-start-column="51" selection-end-line="213" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LFW/9.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LFW/7.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LFW/4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_CVAE_results_2000_batches/img_1800.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_CVAE_results_2000_batches/img_1600.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_CVAE_results_2000_batches/img_1400.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_CVAE_results_2000_batches/img_1900.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_VAE_results_2000_batches/img_1900.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_VAE_results/img_50.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_VAE_results/img_60.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_VAE_results/img_20.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MNIST_VAE_results/img_10.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vae.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
