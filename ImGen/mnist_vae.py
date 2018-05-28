@@ -115,9 +115,8 @@ sess.run(tf.global_variables_initializer())
 
 N = mnist.train.num_examples
 n_batches = N//batch_size
-train_epoch = 2
+train_epoch = 5
 for epoch in range(train_epoch):
-    epoch_start_time = time.time()
     for i in range(n_batches):
         curr_batch_no = epoch*n_batches + i
         batch, labels = mnist.train.next_batch(batch_size=batch_size)
@@ -129,10 +128,10 @@ for epoch in range(train_epoch):
                                                    feed_dict={X_in: batch, condition: labels, Y: batch, keep_prob: 1.0})
         writer.add_summary(summary, curr_batch_no)
         print('Epoch', epoch, '/', train_epoch, 'Batch', i, '/', n_batches, ':', 'Loss', ls, 'Image loss', np.mean(i_ls), 'Latent loss', np.mean(d_ls))
-        if i % 100:
-            epoch_end_time = time.time()
-            per_epoch_ptime = epoch_end_time - epoch_start_time
-            print('Per epoch time:', per_epoch_ptime)
-            gen_results(epoch)
+        if i % 100 == 0:
+            gen_results(str(epoch) + '-' + str(i))
+    gen_results(epoch)
 
+print("Training finished!")
 
+sess.close()
