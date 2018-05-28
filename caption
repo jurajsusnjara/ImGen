@@ -1,0 +1,36 @@
+﻿CAPTION
+
+CONV MODEL
+> istrenirani conv model na cijelom image netu s 21000 labela
+	> uzet out zadnjeg FC sloja s 4096 jedinica
+	
+LANG MODEL
+> uzet corpus riječi iz YFCC100M
+	> preprocesirat
+	> izbacit riječi koje se pojavljuju manje od 200 puta u vokabularu
+	> istrenirat skip-gram model (vektor 200 dimenzija)
+
+TRAIN
+> data: MIR Flickr 25000 dataset
+	> extract img i tag svojstva pomoću modela iznad
+		> slike bez tagova su preskočene dok su anotacije tretirane ko tagovi
+	> Slike s više tagova se ponavljaju za svaki tag
+	> prvih 150000 uzoraka je uzeto kao training set
+
+EVALUACIJA
+> stvoreno 100 uzoraka za svaku sliku
+> odabrano 20 najbližih riječi (kosinusova udaljenost) iz vokabulara za svaki od uzoraka
+> odabrano 10 najčešćih riječi od ovih svih najbližih iz prethodnog koraka
+
+KONAČAN MODEL
+> generator
+	> ulaz 1: gauss šum 100D vektor -> 500D RELU
+	> ulaz 2: img svojstva 4096D vektor -> 2000D RELU
+	> sve skupa mapira se na združeno reprezentaciju 200D linear sloj (riječi)
+> diskriminator
+	> ulaz 1: 200D riječi -> 500D RELU
+	> ulaz 2: 4096 img -> 1200D RELU
+	> maxout 1000 units, 3 pieces združi ovo iznad i mapira na sigmoid izlaz
+> parametri
+	> dropout 0.5
+	> mini batch 100
