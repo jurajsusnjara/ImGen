@@ -3,3 +3,4 @@ ImGen/venv
 ImGen/MNIST*
 ImGen/cifar-10*
 results/*
+ImGen/results/*
