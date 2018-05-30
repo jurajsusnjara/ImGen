@@ -37,8 +37,4 @@ def words_test():
     print(model.similarity('woman', 'man'))
 
 
-rand_cond = []
-for _ in range(25):
-    r = np.random.choice(10)
-    print(r)
-    rand_cond.append(np.eye(57)[r])
+

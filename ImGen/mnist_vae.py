@@ -30,7 +30,7 @@ mnist = input_data.read_data_sets('MNIST_data')
 tf.reset_default_graph()
 
 batch_size = 64
-use_condition = False
+use_condition = True
 
 X_in = tf.placeholder(dtype=tf.float32, shape=[None, 28, 28], name='X')
 X_flat = tf.reshape(X_in, shape=[-1, 28 * 28], name='X_flat')
@@ -85,10 +85,10 @@ def decoder(sampled_z, keep_prob):
         return img
 
 
-def gen_results(i, res_dir = 'results/MNIST_VAE_results'):
+def gen_results(i, res_dir = 'results/MNIST_CVAE_results'):
     randoms = [np.random.normal(0, 1, n_latent) for _ in range(25)]
     r = np.random.choice(10)
-    print('Images', i, ':', r)
+    f_cond_labels.write('Image' + str(i) + 'Label' + str(r))
     rand_cond = [np.eye(57)[r] for _ in range(25)]
     imgs = sess.run(dec, feed_dict={sampled: randoms, condition: rand_cond, keep_prob: 1.0})
     imgs = [np.reshape(imgs[i], [28, 28]) for i in range(len(imgs))]
@@ -108,16 +108,21 @@ tf.summary.scalar('loss', loss)
 tf.summary.scalar('img_loss', tf.reduce_mean(img_loss))
 tf.summary.scalar('latent_loss', tf.reduce_mean(latent_loss))
 
+saver = tf.train.Saver()
 sess = tf.Session()
 merged = tf.summary.merge_all()
-writer = tf.summary.FileWriter('summary/summary_vae_mnist', sess.graph)
+writer = tf.summary.FileWriter('summary/summary_cvae_mnist', sess.graph)
 sess.run(tf.global_variables_initializer())
 
 N = mnist.train.num_examples
 n_batches = N//batch_size
-train_epoch = 5
+train_epoch = 20
+epoch_durations = []
+f_cond_labels = open('results/cvae_cond_labels.txt', 'w')
 for epoch in range(train_epoch):
+    epoch_start = time.time()
     for i in range(n_batches):
+        start = time.time()
         curr_batch_no = epoch*n_batches + i
         batch, labels = mnist.train.next_batch(batch_size=batch_size)
         batch = [np.reshape(b, [28, 28]) for b in batch]
@@ -127,11 +132,22 @@ for epoch in range(train_epoch):
         summary, ls, d, i_ls, d_ls, mu, sigm = sess.run([merged, loss, dec, img_loss, latent_loss, mn, sd],
                                                    feed_dict={X_in: batch, condition: labels, Y: batch, keep_prob: 1.0})
         writer.add_summary(summary, curr_batch_no)
-        print('Epoch', epoch, '/', train_epoch, 'Batch', i, '/', n_batches, ':', 'Loss', ls, 'Image loss', np.mean(i_ls), 'Latent loss', np.mean(d_ls))
+        duration = time.time() - start
+        print('Epoch', epoch+1, '/', train_epoch,
+              'Batch', i+1, '/', n_batches, ':',
+              'Loss', ls,
+              'Image loss', np.mean(i_ls),
+              'Latent loss', np.mean(d_ls),
+              'Duration', duration)
         if i % 100 == 0:
-            gen_results(str(epoch) + '-' + str(i))
-    gen_results(epoch)
+            gen_results(str(epoch+1) + '-' + str(i))
+    gen_results(str(epoch+1))
+    epoch_duration = time.time() - epoch_start
+    epoch_durations.append(epoch_duration)
 
+f_cond_labels.close()
+print('Epoch durations')
+print(epoch_durations)
 print("Training finished!")
-
+saver.save(sess, "/home/juraj/Desktop/model/model.ckpt")
 sess.close()
