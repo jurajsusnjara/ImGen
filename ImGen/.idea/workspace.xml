@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebecd15d-9e31-4e66-9fb1-6f9e6a876f4e" name="Default" comment="Feature matching loss.">
+      <change afterPath="$PROJECT_DIR$/caption.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/config.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mnist_dcgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/mnist_dcgan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mnist_vae.py" beforeDir="false" afterPath="$PROJECT_DIR$/mnist_vae.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_10.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_11.png" beforeDir="false" />
@@ -582,32 +581,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config.cfg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.cfg">
+      <file leaf-file-name="hello.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hello.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mnist_vae.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mnist_vae.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1640">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="578">
+              <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mnist_dcgan.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mnist_dcgan.py">
+      <file leaf-file-name="caption.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/caption.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state relative-caret-position="378">
+              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -674,10 +664,11 @@
         <option value="$PROJECT_DIR$/vgg.py" />
         <option value="$PROJECT_DIR$/words.py" />
         <option value="$PROJECT_DIR$/results/MNIST_VAE_results/epoch_len" />
-        <option value="$PROJECT_DIR$/hello.py" />
         <option value="$PROJECT_DIR$/mnist_vae.py" />
         <option value="$PROJECT_DIR$/mnist_dcgan.py" />
         <option value="$PROJECT_DIR$/results/epoch_durations" />
+        <option value="$PROJECT_DIR$/hello.py" />
+        <option value="$PROJECT_DIR$/caption.py" />
       </list>
     </option>
   </component>
@@ -705,16 +696,6 @@
             <path>
               <item name="ImGen" type="b2602c69:ProjectViewProjectNode" />
               <item name="ImGen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ImGen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ImGen" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ImGen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ImGen" type="462c0819:PsiDirectoryNode" />
-              <item name="summary" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -750,7 +731,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.mnist_dcgan">
+  <component name="RunManager" selected="Python.caption">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="ImGen" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -765,6 +746,44 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="caption" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ImGen" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/caption.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="hello" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ImGen" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hello.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -789,25 +808,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="vae (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ImGen" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vae.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="vae" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ImGen" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -822,25 +822,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mnist_vae.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="vgg" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ImGen" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vgg.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -868,17 +849,17 @@
     <list>
       <item itemvalue="Python.vae" />
       <item itemvalue="Python.mnist_dcgan" />
-      <item itemvalue="Python.vae (1)" />
-      <item itemvalue="Python.vgg" />
       <item itemvalue="Python.words" />
+      <item itemvalue="Python.hello" />
+      <item itemvalue="Python.caption" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.caption" />
+        <item itemvalue="Python.hello" />
         <item itemvalue="Python.mnist_dcgan" />
         <item itemvalue="Python.vae" />
         <item itemvalue="Python.words" />
-        <item itemvalue="Python.vgg" />
-        <item itemvalue="Python.vae (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -963,11 +944,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527538719217</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="MNIST DCGAN update">
+      <created>1527712100444</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1527712100445</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <frame x="-1856" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -978,7 +966,7 @@
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32948583" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5078699" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32948583" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49947533" visible="true" weight="0.2238806" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49947533" visible="true" weight="0.2238806" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32946378" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32946378" />
@@ -1036,7 +1024,8 @@
     <MESSAGE value="General VAE" />
     <MESSAGE value="MNIST VAE" />
     <MESSAGE value="VGG and word2vec basic implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="VGG and word2vec basic implementation" />
+    <MESSAGE value="MNIST DCGAN update" />
+    <option name="LAST_COMMIT_MESSAGE" value="MNIST DCGAN update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1051,13 +1040,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mnist_dcgan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dcgan.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4720">
@@ -1291,13 +1273,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hello.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vgg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1342,6 +1317,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caption.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
         </state>
       </provider>
     </entry>

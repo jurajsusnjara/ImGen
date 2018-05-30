@@ -1,5 +1,6 @@
 import numpy as np
 import gensim
+import gensim.downloader as api
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.applications import vgg19
@@ -28,6 +29,7 @@ def vgg_test():
 
 
 def words_test():
+    # https://radimrehurek.com/gensim/models/word2vec.html
     fmodel = '/home/juraj/Desktop/GoogleNews-vectors-negative300.bin'
     model = gensim.models.KeyedVectors.load_word2vec_format(fmodel, binary=True)
     dog = model['dog']
@@ -37,4 +39,15 @@ def words_test():
     print(model.similarity('woman', 'man'))
 
 
+def gensim_api():
+    print('Loading model')
+    model = api.load("glove-twitter-25")
+    print('Model loaded')
+    dog = model['dog']
+    print(dog)
 
+
+if __name__ == '__main__':
+    print('Loading model')
+    model = api.load("glove-twitter-25")
+    print('Model loaded')
