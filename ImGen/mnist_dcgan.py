@@ -25,79 +25,76 @@ def show_result(test_images, path):
     plt.close()
 
 
-z_size = 8
-img_dim = (28, 28)
-batch_size = 64
-cond_size = 57
+z_size = 100
+img_dim = (64, 64)
+batch_size = 100
+cond_size = 129
 train_epoch = 20
-lr = 0.0005
-reshaped_dim = [-1, 7, 7, 1]
-inputs_generator = int(49 * 1 / 2)
-use_condition = True
+lr = 0.0002
+use_condition = False
+
+res_fixed_dir = 'results/fixed'
+res_random_dir = 'results/random'
 
 
 # G(z)
 def generator(x, keep_prob, isTrain=True, reuse=False):
     with tf.variable_scope('generator', reuse=reuse):
-        x = tf.layers.dense(x, units=inputs_generator, activation=lrelu)
-        x = tf.layers.dense(x, units=inputs_generator * 2 + 1, activation=lrelu)
-        x = tf.reshape(x, reshaped_dim)
-        x = tf.layers.conv2d_transpose(x, filters=64, kernel_size=4, strides=2, padding='same', activation=tf.nn.relu)
-        x = tf.nn.dropout(x, keep_prob)
-        x = tf.layers.conv2d_transpose(x, filters=64, kernel_size=4, strides=1, padding='same', activation=tf.nn.relu)
-        x = tf.nn.dropout(x, keep_prob)
-        x = tf.layers.conv2d_transpose(x, filters=64, kernel_size=4, strides=1, padding='same', activation=tf.nn.relu)
-        x = tf.contrib.layers.flatten(x)
-        x = tf.layers.dense(x, units=28 * 28, activation=tf.nn.sigmoid)
-        img = tf.reshape(x, shape=[-1, 28, 28, 1])
-        # x = tf.contrib.layers.flatten(x)
-        # x = tf.layers.dense(x, units=28 * 28, activation=tf.nn.sigmoid)
-        # img = tf.reshape(x, shape=[-1, 28, 28, 1])
+        x = tf.reshape(x, shape=[-1, 1, 1, x.shape[1]])
+        # 1st hidden layer
+        conv1 = tf.layers.conv2d_transpose(x, 1024, [4, 4], strides=(1, 1), padding='valid')
+        lrelu1 = lrelu(tf.layers.batch_normalization(conv1, training=isTrain), 0.2)
 
-        # idx = 0
-        # inp = x
-        # for depth, stride in zip(g_depths[:-1],g_strides[:-1]):
-        #     padding, strides = ('valid', (1, 1)) if i dx == 0 else ('same', (stride, stride))
-        #     conv = tf.layers.conv2d_transpose(inp, depth, kernel, strides=strides, padding=padding)
-        #     temp = tf.layers.batch_normalization(conv, training=isTrain) if batch_norm else conv
-        #     inp = lrelu(temp, 0.2)
-        #     idx += 1
-        # padding, strides = ('same', (g_strides[-1], g_strides[-1]))
-        # conv = tf.layers.conv2d_transpose(inp, g_depths[-1], kernel, strides=strides, padding=padding)
-        # o = tf.nn.tanh(conv)
+        # 2nd hidden layer
+        conv2 = tf.layers.conv2d_transpose(lrelu1, 512, [4, 4], strides=(2, 2), padding='same')
+        lrelu2 = lrelu(tf.layers.batch_normalization(conv2, training=isTrain), 0.2)
 
-        return img
+        # 3rd hidden layer
+        conv3 = tf.layers.conv2d_transpose(lrelu2, 256, [4, 4], strides=(2, 2), padding='same')
+        lrelu3 = lrelu(tf.layers.batch_normalization(conv3, training=isTrain), 0.2)
+
+        # 4th hidden layer
+        conv4 = tf.layers.conv2d_transpose(lrelu3, 128, [4, 4], strides=(2, 2), padding='same')
+        lrelu4 = lrelu(tf.layers.batch_normalization(conv4, training=isTrain), 0.2)
+
+        # output layer
+        conv5 = tf.layers.conv2d_transpose(lrelu4, 1, [4, 4], strides=(2, 2), padding='same')
+        o = tf.nn.tanh(conv5)
+
+    return o
 
 
 # D(x)
 def discriminator(x, keep_prob, isTrain=True, reuse=False):
-    activation = lrelu
     with tf.variable_scope('discriminator', reuse=reuse):
-        x = tf.layers.conv2d(x, filters=64, kernel_size=4, strides=2, padding='same', activation=activation)
-        x = tf.nn.dropout(x, keep_prob)
-        x = tf.layers.conv2d(x, filters=64, kernel_size=4, strides=2, padding='same', activation=activation)
-        x = tf.nn.dropout(x, keep_prob)
-        x = tf.layers.conv2d(x, filters=64, kernel_size=4, strides=1, padding='same', activation=activation)
-        x = tf.nn.dropout(x, keep_prob)
-        x = tf.contrib.layers.flatten(x)
-        logit = tf.layers.dense(x, units=1)
-        o = tf.nn.sigmoid(logit)
-        # idx = 0
-        # inp = x
-        # for depth, stride in zip(d_depths[:-1], d_strides[:-1]):
-        #     conv = tf.layers.conv2d(inp, depth, kernel, strides=(stride, stride), padding='same')
-        #     inp = lrelu(conv, 0.2) if idx == 0 else lrelu(tf.layers.batch_normalization(conv, training=isTrain), 0.2)
-        #     idx += 1
-        # conv = tf.layers.conv2d(inp, d_depths[-1], kernel, strides=(1, 1), padding='valid')
-        # o = tf.nn.sigmoid(conv)
+        # 1st hidden layer
+        conv1 = tf.layers.conv2d(x, 128, [4, 4], strides=(2, 2), padding='same')
+        lrelu1 = lrelu(conv1, 0.2)
 
-        return o, logit
+        # 2nd hidden layer
+        conv2 = tf.layers.conv2d(lrelu1, 256, [4, 4], strides=(2, 2), padding='same')
+        lrelu2 = lrelu(tf.layers.batch_normalization(conv2, training=isTrain), 0.2)
+
+        # 3rd hidden layer
+        conv3 = tf.layers.conv2d(lrelu2, 512, [4, 4], strides=(2, 2), padding='same')
+        lrelu3 = lrelu(tf.layers.batch_normalization(conv3, training=isTrain), 0.2)
+
+        # 4th hidden layer
+        conv4 = tf.layers.conv2d(lrelu3, 1024, [4, 4], strides=(2, 2), padding='same')
+        lrelu4 = lrelu(tf.layers.batch_normalization(conv4, training=isTrain), 0.2)
+
+        # output layer
+        conv5 = tf.layers.conv2d(lrelu4, 1, [4, 4], strides=(1, 1), padding='valid')
+        o = tf.nn.sigmoid(conv5)
+
+    return o, conv5
 
 
-def gen_results(i, res_dir='results/MNIST_CDCGAN_results'):
-    z_ = np.random.normal(0, 1, (25, 1, 1, z_size))
+fixed_z_ = np.random.normal(0, 1, (25, 1, 1, z_size))
+def gen_results(i, fixed, res_dir):
+    z_rand = np.random.normal(0, 1, (25, 1, 1, z_size))
+    z_ = fixed_z_ if fixed else z_rand
     r = np.random.choice(10)
-    f_cond_labels.write('Image ' + str(i) + ' Label ' + str(r) + '\n')
     rand_cond = [np.eye(cond_size)[r] for _ in range(25)]
     imgs = sess.run(G_z, {z: z_, isTrain: True, keep_prob: 1.0, condition: rand_cond})
     imgs = [np.reshape(imgs[i], [img_dim[0], img_dim[1]]) for i in range(len(imgs))]
@@ -155,10 +152,10 @@ D_fake, D_fake_logits = discriminator(inp_D_fake, keep_prob, isTrain, reuse=True
 # loss for each network
 # cross entropy with logits se koristi radi numericke stabilnosti + kad gledamo to u odnosu na labele jedinice ili nule
 # onda se dobije prakticki ista stvar ko u mnist_gan u izrazima: (1 - nest) ili (nesto)
-D_loss_real = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_real_logits, labels=tf.ones([batch_size, 1])))
-D_loss_fake = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.zeros([batch_size, 1])))
+D_loss_real = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_real_logits, labels=tf.ones([batch_size, 1, 1, 1])))
+D_loss_fake = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.zeros([batch_size, 1, 1, 1])))
 D_loss = D_loss_real + D_loss_fake
-G_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.ones([batch_size, 1])))
+G_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.ones([batch_size, 1, 1, 1])))
 
 
 D_loss_summary = tf.summary.scalar('D_loss', D_loss)
@@ -177,12 +174,12 @@ with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
 # open session and initialize all variables
 saver = tf.train.Saver()
 sess = tf.Session()
-writer = tf.summary.FileWriter('summary/summary_cdcgan_mnist', sess.graph)
+writer = tf.summary.FileWriter('summary', sess.graph)
 sess.run(tf.global_variables_initializer())
 
-# MNIST resize and normalization
-# train_set = tf.image.resize_images(mnist.train.images, [img_dim[0], img_dim[1]]).eval()
-# train_set = (train_set - 0.5) / 0.5  # normalization; range: -1 ~ 1
+train_set = tf.image.resize_images(mnist.train.images, [img_dim[0], img_dim[1]]).eval(session=sess)
+train_labels = mnist.train.labels
+train_set = (train_set - 0.5) / 0.5  # normalization; range: -1 ~ 1
 
 # training-loop
 np.random.seed(int(time.time()))
@@ -190,16 +187,19 @@ print('training start!')
 start_time = time.time()
 N = mnist.train.num_examples
 n_batches = N//batch_size
-epoch_durations = []
-f_cond_labels = open('results/cvae_cond_labels.txt', 'w')
+
+gen_results('init', True, res_fixed_dir)
+gen_results('init', False, res_random_dir)
 for epoch in range(train_epoch):
     epoch_start = time.time()
     for i in range(n_batches):
         start = time.time()
         curr_batch_no = epoch * n_batches + i
-        batch, labels = mnist.train.next_batch(batch_size=batch_size)
+        batch = train_set[i * batch_size:(i + 1) * batch_size]
+        labels = train_labels[i * batch_size:(i + 1) * batch_size]
+        # batch, labels = mnist.train.next_batch(batch_size=batch_size)
         # batch = tf.image.resize_images(batch, [img_dim[0], img_dim[1]]).eval()
-        batch = np.asarray([np.reshape(b, [28, 28, 1]) for b in batch])
+        # batch = np.asarray([np.reshape(b, [28, 28, 1]) for b in batch])
         # batch = (batch - 0.5) / 0.5
         labels = [l for l in np.eye(cond_size)[labels.reshape(-1)]]
         # x_ = train_set[i*batch_size:(i+1)*batch_size]
@@ -219,11 +219,8 @@ for epoch in range(train_epoch):
               'D_loss', np.mean(loss_d_),
               'G_loss', np.mean(loss_g_),
               'Duration', duration)
-        if i % 100 == 0:
-            gen_results(str(epoch+1) + '-' + str(i))
-    gen_results(epoch+1)
-    epoch_duration = time.time() - epoch_start
-    epoch_durations.append(epoch_duration)
+    gen_results(str(epoch+1), True, res_fixed_dir)
+    gen_results(str(epoch+1), False, res_random_dir)
 
 # images = []
 # for e in range(train_epoch):
@@ -231,11 +228,6 @@ for epoch in range(train_epoch):
 #     images.append(imageio.imread(img_name))
 # imageio.mimsave(root + model + 'generation_animation.gif', images, fps=5)
 
-# TODO zasto su pixelasti rezultati ? jel treba full conv mreza bit da bude okej ?
-
-f_cond_labels.close()
-print('Epoch durations')
-print(epoch_durations)
-print("Training finished!")
-saver.save(sess, "/home/juraj/Desktop/model/model.ckpt")
+saver.save(sess, "model/model.ckpt")
 sess.close()
+

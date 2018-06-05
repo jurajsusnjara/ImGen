@@ -139,6 +139,7 @@ def resize_lfw(dir, out_dir, dim=(128, 128), fmt='jpeg'):
 
 
 if __name__ == '__main__':
+    # resize_lfw('/home/juraj/Desktop/LFW/lfw-deepfunneled', '/home/juraj/Desktop/LFW/lfw-deepfunneled(64x64)', dim=(64,64))
     inp_file = '/home/juraj/Desktop/food.txt'
     out_dir = '/home/juraj/Desktop/image_net_food(64x64)'
     n = -1
