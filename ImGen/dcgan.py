@@ -25,7 +25,9 @@ d_strides = [int(el) for el in cfg.config['dcgan']['d_strides'].split(',')]
 z_size = int(cfg.config['dcgan']['z_size'])
 img_dim_str = cfg.config['dcgan']['img_dim'].split('x')
 img_dim = (int(img_dim_str[0]), int(img_dim_str[1]))
-return_layer = int(cfg.config['dcgan']['return_layer'])
+
+res_fixed_dir = 'results/fixed'
+res_random_dir = 'results/random'
 
 
 # G(z)
@@ -64,15 +66,7 @@ def discriminator(x, isTrain=True, reuse=False, return_layer=-1):
         return o, conv
 
 
-fixed_z_ = np.random.normal(0, 1, (25, 1, 1, z_size))
-def show_result(num_epoch, show=False, save=False, path='result.png', isFix=False):
-    z_ = np.random.normal(0, 1, (25, 1, 1, z_size))
-
-    if isFix:
-        test_images = sess.run(G_z, {z: fixed_z_, isTrain: False})
-    else:
-        test_images = sess.run(G_z, {z: z_, isTrain: False})
-
+def show_result(test_images, path):
     size_figure_grid = 5
     fig, ax = plt.subplots(size_figure_grid, size_figure_grid, figsize=(5, 5))
     for i, j in itertools.product(range(size_figure_grid), range(size_figure_grid)):
@@ -83,49 +77,23 @@ def show_result(num_epoch, show=False, save=False, path='result.png', isFix=Fals
         i = k // size_figure_grid
         j = k % size_figure_grid
         ax[i, j].cla()
-        ax[i, j].imshow(test_images[k], interpolation='nearest')
-
-    label = 'Epoch {0}'.format(num_epoch)
-    fig.text(0.5, 0.04, label, ha='center')
-
-    if save:
-        plt.savefig(path)
-
-    if show:
-        plt.show()
-    else:
-        plt.close()
+        ax[i, j].imshow(test_images[k], cmap='gray')
+    plt.savefig(path)
+    plt.close()
 
 
-def show_train_hist(hist, show=False, save=False, path='Train_hist.png'):
-    x = range(len(hist['D_losses']))
-
-    y1 = hist['D_losses']
-    y2 = hist['G_losses']
-
-    plt.plot(x, y1, label='D_loss')
-    plt.plot(x, y2, label='G_loss')
-
-    plt.xlabel('Epoch')
-    plt.ylabel('Loss')
-
-    plt.legend(loc=4)
-    plt.grid(True)
-    plt.tight_layout()
-
-    if save:
-        plt.savefig(path)
-
-    if show:
-        plt.show()
-    else:
-        plt.close()
+fixed_z_ = np.random.normal(0, 1, (25, 1, 1, z_size))
+def gen_results(i, fixed, res_dir):
+    z_ = np.random.normal(0, 1, (25, 1, 1, z_size))
+    imgs = sess.run(G_z, {z: fixed_z_, isTrain: False}) if fixed else sess.run(G_z, {z: z_, isTrain: False})
+    imgs = [np.reshape(imgs[i], [img_dim[0], img_dim[1], 3]) for i in range(len(imgs))]
+    show_result(imgs, res_dir + '/img_' + str(i) + '.jpg')
 
 
 # variables : input
 x = tf.placeholder(tf.float32, shape=(None, img_dim[0], img_dim[1], 3))
 z = tf.placeholder(tf.float32, shape=(None, 1, 1, z_size))
-isTrain = tf.placeholder(dtype=tf.bool)
+isTrain = tf.placeholder(dtype=tf.bool, name='is_train')
 
 # networks : generator
 G_z = generator(z, isTrain)
@@ -135,8 +103,8 @@ D_real, D_real_logits = discriminator(x, isTrain)
 D_fake, D_fake_logits = discriminator(G_z, isTrain, reuse=True)
 
 # discriminator activations
-D_real_act, D_real_act_ = discriminator(x, isTrain, return_layer=return_layer, reuse=True)
-D_fake_act, D_fake_act_ = discriminator(G_z, isTrain, return_layer=return_layer, reuse=True)
+D_real_act, D_real_act_ = discriminator(x, isTrain, reuse=True)
+D_fake_act, D_fake_act_ = discriminator(G_z, isTrain, reuse=True)
 
 
 # loss for each network
@@ -148,6 +116,8 @@ D_loss = D_loss_real + D_loss_fake
 # G_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_fake_logits, labels=tf.ones([batch_size, 1, 1, 1])))
 G_loss = tf.norm(D_real_act - D_fake_act)
 
+D_loss_summary = tf.summary.scalar('D_loss', D_loss)
+G_loss_summary = tf.summary.scalar('G_loss', G_loss)
 
 # trainable variables for each network
 T_vars = tf.trainable_variables()
@@ -162,81 +132,45 @@ with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
 # open session and initialize all variables
 saver = tf.train.Saver()
 sess = tf.InteractiveSession()
+writer = tf.summary.FileWriter('summary', sess.graph)
 tf.global_variables_initializer().run()
 
-train_set = image_reader.get_images(
-    '/home/juraj/Desktop/image_net/image_net_food(128x128)',
-    2000,
-    shape=(img_dim[0], img_dim[1], 3))
-
-# results save folder
-root = 'DCGAN_results/'
-model = 'DCGAN_'
-if not os.path.isdir(root):
-    os.mkdir(root)
-if not os.path.isdir(root + 'Fixed_results'):
-    os.mkdir(root + 'Fixed_results')
-if not os.path.isdir(root + 'Random_results'):
-    os.mkdir(root + 'Random_results')
-
-train_hist = {}
-train_hist['D_losses'] = []
-train_hist['G_losses'] = []
-train_hist['per_epoch_ptimes'] = []
-train_hist['total_ptime'] = []
+train_set = image_reader.get_cifar10_images()
 
 # training-loop
+N = len(train_set)
+print('Got', N, 'images')
+n_batches = N//batch_size
 np.random.seed(int(time.time()))
 print('training start!')
-start_time = time.time()
+
+gen_results('init', True, res_fixed_dir)
+gen_results('init', False, res_random_dir)
 for epoch in range(train_epoch):
-    G_losses = []
-    D_losses = []
-    epoch_start_time = time.time()
-    for iter in range(len(train_set) // batch_size):
+    epoch_start = time.time()
+    for i in range(n_batches):
+        start = time.time()
+        curr_batch_no = epoch * n_batches + i
         # update discriminator
-        x_ = train_set[iter*batch_size:(iter+1)*batch_size]
+        x_ = train_set[i*batch_size:(i+1)*batch_size]
         z_ = np.random.normal(0, 1, (batch_size, 1, 1, z_size))
 
-        loss_d_, _ = sess.run([D_loss, D_optim], {x: x_, z: z_, isTrain: True})
-        D_losses.append(loss_d_)
+        loss_d_, _, summary = sess.run([D_loss, D_optim, D_loss_summary], {x: x_, z: z_, isTrain: True})
+        writer.add_summary(summary, curr_batch_no)
 
         # update generator
         z_ = np.random.normal(0, 1, (batch_size, 1, 1, z_size))
-        loss_g_, _ = sess.run([G_loss, G_optim], {z: z_, x: x_, isTrain: True})
-        G_losses.append(loss_g_)
+        loss_g_, _, summary = sess.run([G_loss, G_optim, G_loss_summary], {z: z_, x: x_, isTrain: True})
+        writer.add_summary(summary, curr_batch_no)
+        duration = time.time() - start
+        print('Epoch', epoch + 1, '/', train_epoch,
+              'Batch', i + 1, '/', n_batches, ':',
+              'D_loss', np.mean(loss_d_),
+              'G_loss', np.mean(loss_g_),
+              'Duration', duration)
+    gen_results(str(epoch+1), True, res_fixed_dir)
+    gen_results(str(epoch+1), False, res_random_dir)
 
-    epoch_end_time = time.time()
-    per_epoch_ptime = epoch_end_time - epoch_start_time
-    print('[%d/%d] - ptime: %.2f loss_d: %.3f, loss_g: %.3f' % ((epoch + 1), train_epoch, per_epoch_ptime, np.mean(D_losses), np.mean(G_losses)))
-    fixed_p = root + 'Fixed_results/' + model + str(epoch + 1) + '.png'
-    p = root + 'Random_results/' + model + str(epoch + 1) + '.png'
-    show_result((epoch + 1), save=True, path=fixed_p, isFix=True)
-    show_result((epoch + 1), save=True, path=p, isFix=False)
-    train_hist['D_losses'].append(np.mean(D_losses))
-    train_hist['G_losses'].append(np.mean(G_losses))
-    train_hist['per_epoch_ptimes'].append(per_epoch_ptime)
-
-end_time = time.time()
-total_ptime = end_time - start_time
-train_hist['total_ptime'].append(total_ptime)
-
-print('Avg per epoch ptime: %.2f, total %d epochs ptime: %.2f' % (np.mean(train_hist['per_epoch_ptimes']), train_epoch, total_ptime))
-print("Training finish!... save training results")
-with open(root + model + 'train_hist.pkl', 'wb') as f:
-    pickle.dump(train_hist, f)
-
-show_train_hist(train_hist, save=True, path=root + model + 'train_hist.png')
-
-images = []
-for e in range(train_epoch):
-    img_name = root + 'Fixed_results/' + model + str(e + 1) + '.png'
-    images.append(imageio.imread(img_name))
-imageio.mimsave(root + model + 'generation_animation.gif', images, fps=5)
-
-saver.save(sess, "/home/juraj/Desktop/model.ckpt")
+saver.save(sess, "model/model.ckpt")
 sess.close()
 
-# TODO CDCGAN
-
-# TODO spremanje težina
