@@ -6,6 +6,9 @@ from keras.applications import vgg19
 from keras.applications.imagenet_utils import decode_predictions
 from keras import backend as K
 import numpy as np
+import gensim
+import tensorflow as tf
+import time
 
 
 def load_pickle(fname):
@@ -23,6 +26,23 @@ def get_id_from(fname):
     start_idx = 4
     end_idx = fname.find('.')
     return int(fname[start_idx:end_idx])
+
+
+def generate_mapping():
+    tags_dir = '/home/juraj/Desktop/flickr_data/mirflickr/meta/tags'
+    ann_dir = '/home/juraj/Desktop/flickr_data/mirflickr25k_annotations_v080'
+    mapping = Mapping()
+    mapping.extract_annotations(ann_dir)
+    mapping.extract_id2tags_mapping(tags_dir)
+    mapping.save_pickle('mapping')
+
+
+def get_vocabulary(map_dict):
+    vocabulary = set()
+    for _, value in map_dict.items():
+        for v in value:
+            vocabulary.add(v)
+    return list(vocabulary)
 
 
 class Mapping:
@@ -102,19 +122,155 @@ class ImageFeatures:
         return self.img_feats
 
 
-def generate_mapping():
-    tags_dir = '/home/juraj/Desktop/flickr_data/mirflickr/meta/tags'
-    ann_dir = '/home/juraj/Desktop/flickr_data/mirflickr25k_annotations_v080'
-    mapping = Mapping()
-    mapping.extract_annotations(ann_dir)
-    mapping.extract_id2tags_mapping(tags_dir)
-    mapping.save_pickle('mapping')
+class WordVectors:
+    def __init__(self, fmodel):
+        self.model = gensim.models.KeyedVectors.load_word2vec_format(fmodel, binary=True)
+        self.w2v = {}
+
+    def word2vec(self, word):
+        try:
+            res = self.model[word]
+        except:
+            res = []
+        return res
+
+    def create_dict(self, vocabulary):
+        N = len(vocabulary)
+        i = 0
+        for word in vocabulary:
+            i += 1
+            print(i, '/', N)
+            self.w2v[word] = self.word2vec(word)
+        return self.w2v
+
+
+class Dataset:
+    def __init__(self, mapping, img_features, word2vec):
+        self.mapping = mapping
+        self.img_features = img_features
+        self.word2vec = word2vec
+        self.dataset = []
+
+    def create_dataset(self):
+        for id, words in self.mapping.items():
+            words = list(set(words))
+            features = self.img_features[id]
+            vecs = [self.word2vec[word] for word in words]
+            for vec in vecs:
+                self.dataset.append((features, vec))
+
+    def dataset2file(self, fname):
+        with open(fname, 'w') as f:
+            for data in self.dataset:
+                f.write(str(data[0]))
+                f.write('\t')
+                f.write(str(data[1]))
+                f.write('\n')
+
+    def clean_dataset(self):
+        cleaned_dataset = []
+        for data in self.dataset:
+            if data[1] != []:
+                cleaned_dataset.append((data[0], data[1].reshape(1, 300)))
+        self.dataset = cleaned_dataset
+
+
+class CaptionNet:
+    def __init__(self, batch_size, lr, dropout):
+        self.batch_size = batch_size
+        self.dropout = dropout
+        self.noise = tf.placeholder(tf.float32, shape=(None, 1, 100))
+        self.img_features = tf.placeholder(tf.float32, shape=(None, 1, 4096))
+        self.word_vec = tf.placeholder(tf.float32, shape=(None, 1, 300))
+        G = self.generator(self.noise, self.img_features)
+        D_real, D_real_logits = self.discriminator(
+            self.img_features, self.word_vec)
+        D_fake, D_fake_logits = self.discriminator(
+            self.img_features, G, reuse=True)
+        D_loss_real = tf.reduce_mean(
+            tf.nn.sigmoid_cross_entropy_with_logits(
+                logits=D_real_logits, labels=tf.ones([batch_size, 1, 1])))
+        D_loss_fake = tf.reduce_mean(
+            tf.nn.sigmoid_cross_entropy_with_logits(
+                logits=D_fake_logits, labels=tf.zeros([batch_size, 1, 1])))
+        self.D_loss = D_loss_real + D_loss_fake
+        self.G_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(
+            logits=D_fake_logits, labels=tf.ones([batch_size, 1, 1])))
+        T_vars = tf.trainable_variables()
+        D_vars = [var for var in T_vars if var.name.startswith('discriminator')]
+        G_vars = [var for var in T_vars if var.name.startswith('generator')]
+        with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
+            self.D_optim = tf.train.AdamOptimizer(lr, beta1=0.5).minimize(self.D_loss, var_list=D_vars)
+            self.G_optim = tf.train.AdamOptimizer(lr, beta1=0.5).minimize(self.G_loss, var_list=G_vars)
+
+    def generator(self, noise, img_features, reuse=False):
+        with tf.variable_scope('generator', reuse=reuse):
+            x1 = tf.layers.dense(noise, units=500, activation=tf.nn.relu)
+            x1 = tf.nn.dropout(x1, self.dropout)
+            x2 = tf.layers.dense(img_features, units=200, activation=tf.nn.relu)
+            x2 = tf.nn.dropout(x2, self.dropout)
+            x = tf.concat([x1, x2], axis=2)
+            x = tf.nn.dropout(x, self.dropout)
+            out = tf.layers.dense(x, units=300)
+        return out
+
+    def discriminator(self, img_features, word_vec, reuse=False):
+        with tf.variable_scope('discriminator', reuse=reuse):
+            x1 = tf.layers.dense(img_features, units=1200, activation=tf.nn.relu)
+            x1 = tf.nn.dropout(x1, self.dropout)
+            x2 = tf.layers.dense(word_vec, units=500, activation=tf.nn.relu)
+            x2 = tf.nn.dropout(x2, self.dropout)
+            x = tf.concat([x1, x2], axis=2)
+            # x = tf.contrib.layers.maxout(x, 1000)
+            x = tf.layers.dense(x, units=1000)
+            x = tf.nn.dropout(x, self.dropout)
+            logit = tf.layers.dense(x, units=1)
+            out = tf.nn.sigmoid(logit)
+        return out, logit
+
+    def init_session(self):
+        self.sess = tf.InteractiveSession()
+        tf.global_variables_initializer().run()
+
+    def train(self, train_set, epochs):
+        N = len(train_set)
+        n_batches = N // self.batch_size
+        np.random.seed(int(time.time()))
+        for epoch in range(epochs):
+            for i in range(n_batches):
+                start = time.time()
+                curr_batch_no = epoch * n_batches + i
+                data = train_set[i * self.batch_size:(i + 1) * self.batch_size]
+                img_features_data = [el[0] for el in data]
+                word_vec_data = [el[1] for el in data]
+                noise = np.random.normal(0, 1, (self.batch_size, 1, 100))
+                loss_d_, _ = self.sess.run([self.D_loss, self.D_optim],
+                                      {self.img_features: img_features_data, self.word_vec: word_vec_data, self.noise: noise})
+                noise = np.random.normal(0, 1, (self.batch_size, 1, 100))
+                loss_g_, _ = self.sess.run([self.G_loss, self.G_optim],
+                                      {self.img_features: img_features_data, self.word_vec: word_vec_data, self.noise: noise})
+                duration = time.time() - start
+                print('Epoch', epoch + 1, '/', epochs,
+                      'Batch', i + 1, '/', n_batches, ':',
+                      'D_loss', np.mean(loss_d_),
+                      'G_loss', np.mean(loss_g_),
+                      'Duration', duration)
+
+    def end_session(self):
+        self.sess.close()
 
 
 if __name__ == '__main__':
-    dir = 'imgs'
-    save_path = 'img_features'
-    img = ImageFeatures()
-    res = img.imgs2feats(dir)
-    print('Saving results')
-    save_pickle(save_path, res)
+    mapping = load_pickle('caption_data/mapping')
+    img_features = load_pickle('caption_data/img_features')
+    word2vec = load_pickle('caption_data/word2vec')
+    dataset = Dataset(mapping, img_features, word2vec)
+    dataset.create_dataset()
+    dataset.clean_dataset()
+    lr = 0.0005
+    batch_size = 100
+    dropout = 0.5
+    epochs = 10
+    net = CaptionNet(batch_size, lr, dropout)
+    net.init_session()
+    net.train(dataset.dataset, epochs)

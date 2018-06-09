@@ -48,6 +48,4 @@ def gensim_api():
 
 
 if __name__ == '__main__':
-    print('Loading model')
-    model = api.load("glove-twitter-25")
-    print('Model loaded')
+    gensim_api()

@@ -4,6 +4,7 @@
     <list default="true" id="ebecd15d-9e31-4e66-9fb1-6f9e6a876f4e" name="Default" comment="Feature matching loss.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/caption.py" beforeDir="false" afterPath="$PROJECT_DIR$/caption.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_10.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../results/MNIST/MNIST_DCGAN_results(tanh)/Fixed_results/MNIST_DCGAN_11.png" beforeDir="false" />
@@ -558,10 +559,11 @@
     <SUITE FILE_PATH="coverage/ImGen$vae.coverage" NAME="vae Coverage Results" MODIFIED="1527274767758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$img_reader.coverage" NAME="img_reader Coverage Results" MODIFIED="1525182214077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$cifar10_dcgan.coverage" NAME="cifar10_dcgan Coverage Results" MODIFIED="1525428850704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ImGen$hello.coverage" NAME="hello Coverage Results" MODIFIED="1526412417552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$mnist_vae.coverage" NAME="mnist_vae Coverage Results" MODIFIED="1528148547224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ImGen$hello.coverage" NAME="hello Coverage Results" MODIFIED="1528478458086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$vgg.coverage" NAME="vgg Coverage Results" MODIFIED="1527532187867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ImGen$cifar10.coverage" NAME="cifar10 Coverage Results" MODIFIED="1525160283984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ImGen$caption.coverage" NAME="caption Coverage Results" MODIFIED="1528564846464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -581,50 +583,75 @@
     <favorites_list name="ImGen" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="caption.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/caption.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="100">
-                  <caret line="59" column="41" lean-forward="true" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#0#9#0" expanded="true" />
-                    <element signature="e#1852#2140#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="hello.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/hello.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="380">
-                  <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="check.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/check.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="98">
-                  <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-                  <folding>
-                    <element signature="e#0#9#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="caption.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/caption.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="262" column="6" selection-start-line="262" selection-start-column="6" selection-end-line="262" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#318#408#0" />
+                <element signature="e#444#522#0" />
+                <element signature="e#553#637#0" />
+                <element signature="e#668#956#0" />
+                <element signature="e#993#1131#0" />
+                <element signature="e#1058#1103#0" />
+                <element signature="e#659#2096#0" />
+                <element signature="e#687#704#0" />
+                <element signature="e#762#906#0" />
+                <element signature="e#820#886#0" />
+                <element signature="e#963#1109#0" />
+                <element signature="e#1020#1090#0" />
+                <element signature="e#1162#1255#0" />
+                <element signature="e#1302#1427#0" />
+                <element signature="e#1485#1716#0" />
+                <element signature="e#1531#1688#0" />
+                <element signature="e#1770#1969#0" />
+                <element signature="e#1816#1941#0" />
+                <element signature="e#2009#2096#0" />
+                <element signature="e#2124#2977#0" />
+                <element signature="e#2152#2355#0" />
+                <element signature="e#2397#2675#0" />
+                <element signature="e#2716#2977#0" />
+                <element signature="e#2772#2947#0" />
+                <element signature="e#3003#3350#0" />
+                <element signature="e#3039#3142#0" />
+                <element signature="e#3676#3771#0" />
+                <element signature="e#3263#3359#0" />
+                <element signature="e#3332#3383#0" />
+                <element signature="e#4028#4965#0" />
+                <element signature="e#4089#4211#0" />
+                <element signature="e#4251#4497#0" />
+                <element signature="e#4302#4497#0" />
+                <element signature="e#4557#4758#0" />
+                <element signature="e#4597#4758#0" />
+                <element signature="e#4639#4758#0" />
+                <element signature="e#5056#9239#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mnist_vae.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mnist_vae.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="125" column="21" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dcgan.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dcgan.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-217">
+              <caret line="135" selection-start-line="135" selection-end-line="135" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -655,14 +682,15 @@
       <find>drop</find>
       <find>keep_pro</find>
       <find>show_</find>
-      <find>mnist =</find>
+      <find />
       <find>inp_G</find>
-      <find>if use</find>
+      <find />
       <find>condition</find>
       <find>Image</find>
       <find>saver</find>
       <find>summary</find>
       <find>clip</find>
+      <find>concat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -683,17 +711,17 @@
         <option value="$PROJECT_DIR$/words.py" />
         <option value="$PROJECT_DIR$/results/MNIST_VAE_results/epoch_len" />
         <option value="$PROJECT_DIR$/results/epoch_durations" />
-        <option value="$PROJECT_DIR$/hello.py" />
         <option value="$PROJECT_DIR$/image_reader.py" />
         <option value="$PROJECT_DIR$/utility.py" />
         <option value="$PROJECT_DIR$/config.cfg" />
         <option value="$PROJECT_DIR$/vae.py" />
         <option value="$PROJECT_DIR$/mnist_vae.py" />
         <option value="$PROJECT_DIR$/load_sess.py" />
-        <option value="$PROJECT_DIR$/dcgan.py" />
         <option value="$PROJECT_DIR$/mnist_dcgan.py" />
-        <option value="$PROJECT_DIR$/caption.py" />
         <option value="$PROJECT_DIR$/check.py" />
+        <option value="$PROJECT_DIR$/hello.py" />
+        <option value="$PROJECT_DIR$/dcgan.py" />
+        <option value="$PROJECT_DIR$/caption.py" />
       </list>
     </option>
   </component>
@@ -704,10 +732,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1857" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -725,18 +753,7 @@
             <path>
               <item name="ImGen" type="b2602c69:ProjectViewProjectNode" />
               <item name="ImGen" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ImGen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ImGen" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-              <item name="random" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ImGen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ImGen" type="462c0819:PsiDirectoryNode" />
-              <item name="summary" type="462c0819:PsiDirectoryNode" />
+              <item name="caption_data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -750,14 +767,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/cifar-10" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/caption_data" />
       <recent name="$PROJECT_DIR$/results" />
       <recent name="$PROJECT_DIR$/summary" />
       <recent name="$PROJECT_DIR$/image_net_preprocessed" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/cifar-10" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -811,7 +829,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="dcgan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="hello" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ImGen" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -824,7 +842,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dcgan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hello.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -890,17 +908,17 @@
     <list>
       <item itemvalue="Python.mnist_vae" />
       <item itemvalue="Python.mnist_dcgan" />
-      <item itemvalue="Python.dcgan" />
       <item itemvalue="Python.load_sess" />
       <item itemvalue="Python.caption" />
+      <item itemvalue="Python.hello" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.caption" />
+        <item itemvalue="Python.hello" />
         <item itemvalue="Python.mnist_dcgan" />
         <item itemvalue="Python.load_sess" />
         <item itemvalue="Python.mnist_vae" />
-        <item itemvalue="Python.dcgan" />
       </list>
     </recent_temporary>
   </component>
@@ -1020,11 +1038,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528197005585</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Caption image features.">
+      <created>1528411933260</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1528411933260</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1855" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="64" y="1069" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1033,22 +1058,22 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32948583" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41867787" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43022037" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32843652" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49947533" weight="0.23770039" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32946378" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32948583" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32946378" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50052464" side_tool="true" weight="0.1973466" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.48373556" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37355718" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32948583" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1073,7 +1098,8 @@
     <MESSAGE value="Feature matching loss." />
     <MESSAGE value="DCGAN update." />
     <MESSAGE value="MNIST dcgan bigger net" />
-    <option name="LAST_COMMIT_MESSAGE" value="MNIST dcgan bigger net" />
+    <MESSAGE value="Caption image features." />
+    <option name="LAST_COMMIT_MESSAGE" value="Caption image features." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1084,37 +1110,14 @@
           <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="214" />
+      <option name="time" value="222" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dcgan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2500">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_dcgan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4240">
-          <caret line="216" column="28" selection-start-line="216" selection-start-column="28" selection-end-line="216" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mnist_vae.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1122,9 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2000">
           <caret line="100" column="34" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1339,23 +1339,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dcgan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2500">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mnist_dcgan.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="138" column="8" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1363,47 +1350,89 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="85" selection-start-line="85" selection-end-line="85" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_vae.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caption.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="59" column="41" lean-forward="true" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#1852#2140#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/check.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hello.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+        <state relative-caret-position="780">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/random/img_init.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caption_data/caption_data.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-720" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mnist_vae.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="125" column="21" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dcgan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="135" selection-start-line="135" selection-end-line="135" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caption.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="262" column="6" selection-start-line="262" selection-start-column="6" selection-end-line="262" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#318#408#0" />
+            <element signature="e#444#522#0" />
+            <element signature="e#553#637#0" />
+            <element signature="e#668#956#0" />
+            <element signature="e#993#1131#0" />
+            <element signature="e#1058#1103#0" />
+            <element signature="e#659#2096#0" />
+            <element signature="e#687#704#0" />
+            <element signature="e#762#906#0" />
+            <element signature="e#820#886#0" />
+            <element signature="e#963#1109#0" />
+            <element signature="e#1020#1090#0" />
+            <element signature="e#1162#1255#0" />
+            <element signature="e#1302#1427#0" />
+            <element signature="e#1485#1716#0" />
+            <element signature="e#1531#1688#0" />
+            <element signature="e#1770#1969#0" />
+            <element signature="e#1816#1941#0" />
+            <element signature="e#2009#2096#0" />
+            <element signature="e#2124#2977#0" />
+            <element signature="e#2152#2355#0" />
+            <element signature="e#2397#2675#0" />
+            <element signature="e#2716#2977#0" />
+            <element signature="e#2772#2947#0" />
+            <element signature="e#3003#3350#0" />
+            <element signature="e#3039#3142#0" />
+            <element signature="e#3676#3771#0" />
+            <element signature="e#3263#3359#0" />
+            <element signature="e#3332#3383#0" />
+            <element signature="e#4028#4965#0" />
+            <element signature="e#4089#4211#0" />
+            <element signature="e#4251#4497#0" />
+            <element signature="e#4302#4497#0" />
+            <element signature="e#4557#4758#0" />
+            <element signature="e#4597#4758#0" />
+            <element signature="e#4639#4758#0" />
+            <element signature="e#5056#9239#0" />
+          </folding>
         </state>
       </provider>
     </entry>
