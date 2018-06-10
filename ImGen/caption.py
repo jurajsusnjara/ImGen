@@ -9,6 +9,7 @@ import numpy as np
 import gensim
 import tensorflow as tf
 import time
+from sklearn.neighbors import NearestNeighbors
 
 
 def load_pickle(fname):
@@ -260,7 +261,25 @@ class CaptionNet:
         self.sess.close()
 
 
-if __name__ == '__main__':
+class NearestWordVectors:
+    def __init__(self, word2vec):
+        self.word2vec = word2vec
+        self.words = []
+        self.vectors = []
+        self.extract_from_dict()
+        self.nbrs = NearestNeighbors(algorithm='brute', metric='cosine').fit(self.vectors)
+
+    def extract_from_dict(self):
+        for word, vec in self.word2vec.items():
+            self.words.append(word)
+            self.vectors.append(vec.reshape(3))
+
+    def get_n_nearest(self, n, query):
+        distances, indices = self.nbrs.kneighbors(query, n_neighbors=n)
+        return [self.words[i] for i in indices[0]]
+
+
+def train_caption_net():
     mapping = load_pickle('caption_data/mapping')
     img_features = load_pickle('caption_data/img_features')
     word2vec = load_pickle('caption_data/word2vec')
@@ -274,3 +293,22 @@ if __name__ == '__main__':
     net = CaptionNet(batch_size, lr, dropout)
     net.init_session()
     net.train(dataset.dataset, epochs)
+
+
+def define_nearest_model():
+    d = {'a': np.array([[0, 0, 0]]),
+         'b': np.array([[1, 0, 0]]),
+         'c': np.array([[1, 1, 0]]),
+         'd': np.array([[3, 5, 3]]),
+         'e': np.array([[5, 4, 5]])}
+    query = np.array([[2, 2, 2]])
+    nv = NearestWordVectors(d)
+    res = nv.get_n_nearest(3, query)
+    print(res)
+
+if __name__ == '__main__':
+    pass
+
+
+# TODO pronalazak najslicnijeg vektora iz word2vec
+# TODO istrenirat i spremit mrezu
