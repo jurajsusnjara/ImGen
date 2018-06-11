@@ -177,12 +177,17 @@ class Dataset:
 
 
 class CaptionNet:
-    def __init__(self, batch_size, lr, dropout):
+    def __init__(self, batch_size, lr, dropout, save_model, save_summary):
+        self.sess = None
+        self.saver = None
+        self.writer = None
+        self.save_summary = save_summary
+        self.save_model = save_model
         self.batch_size = batch_size
         self.dropout = dropout
-        self.noise = tf.placeholder(tf.float32, shape=(None, 1, 100))
-        self.img_features = tf.placeholder(tf.float32, shape=(None, 1, 4096))
-        self.word_vec = tf.placeholder(tf.float32, shape=(None, 1, 300))
+        self.noise = tf.placeholder(tf.float32, shape=(None, 1, 100), name='noise')
+        self.img_features = tf.placeholder(tf.float32, shape=(None, 1, 4096), name='img_features')
+        self.word_vec = tf.placeholder(tf.float32, shape=(None, 1, 300), name='word_vec')
         G = self.generator(self.noise, self.img_features)
         D_real, D_real_logits = self.discriminator(
             self.img_features, self.word_vec)
@@ -197,6 +202,8 @@ class CaptionNet:
         self.D_loss = D_loss_real + D_loss_fake
         self.G_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(
             logits=D_fake_logits, labels=tf.ones([batch_size, 1, 1])))
+        self.D_loss_summary = tf.summary.scalar('D_loss', self.D_loss)
+        self.G_loss_summary = tf.summary.scalar('G_loss', self.G_loss)
         T_vars = tf.trainable_variables()
         D_vars = [var for var in T_vars if var.name.startswith('discriminator')]
         G_vars = [var for var in T_vars if var.name.startswith('generator')]
@@ -212,7 +219,7 @@ class CaptionNet:
             x2 = tf.nn.dropout(x2, self.dropout)
             x = tf.concat([x1, x2], axis=2)
             x = tf.nn.dropout(x, self.dropout)
-            out = tf.layers.dense(x, units=300)
+            out = tf.layers.dense(x, units=300, name='g_out')
         return out
 
     def discriminator(self, img_features, word_vec, reuse=False):
@@ -230,7 +237,9 @@ class CaptionNet:
         return out, logit
 
     def init_session(self):
+        self.saver = tf.train.Saver()
         self.sess = tf.InteractiveSession()
+        self.writer = tf.summary.FileWriter(self.save_summary, self.sess.graph)
         tf.global_variables_initializer().run()
 
     def train(self, train_set, epochs):
@@ -245,11 +254,13 @@ class CaptionNet:
                 img_features_data = [el[0] for el in data]
                 word_vec_data = [el[1] for el in data]
                 noise = np.random.normal(0, 1, (self.batch_size, 1, 100))
-                loss_d_, _ = self.sess.run([self.D_loss, self.D_optim],
+                loss_d_, _, summary = self.sess.run([self.D_loss, self.D_optim, self.D_loss_summary],
                                       {self.img_features: img_features_data, self.word_vec: word_vec_data, self.noise: noise})
+                self.writer.add_summary(summary, curr_batch_no)
                 noise = np.random.normal(0, 1, (self.batch_size, 1, 100))
-                loss_g_, _ = self.sess.run([self.G_loss, self.G_optim],
+                loss_g_, _, summary = self.sess.run([self.G_loss, self.G_optim, self.G_loss_summary],
                                       {self.img_features: img_features_data, self.word_vec: word_vec_data, self.noise: noise})
+                self.writer.add_summary(summary, curr_batch_no)
                 duration = time.time() - start
                 print('Epoch', epoch + 1, '/', epochs,
                       'Batch', i + 1, '/', n_batches, ':',
@@ -258,6 +269,7 @@ class CaptionNet:
                       'Duration', duration)
 
     def end_session(self):
+        self.saver.save(self.sess, self.save_model)
         self.sess.close()
 
 
@@ -289,8 +301,8 @@ def train_caption_net():
     lr = 0.0005
     batch_size = 100
     dropout = 0.5
-    epochs = 10
-    net = CaptionNet(batch_size, lr, dropout)
+    epochs = 1
+    net = CaptionNet(batch_size, lr, dropout, 'model/model.ckpt', 'summary')
     net.init_session()
     net.train(dataset.dataset, epochs)
 
@@ -306,9 +318,12 @@ def define_nearest_model():
     res = nv.get_n_nearest(3, query)
     print(res)
 
+
 if __name__ == '__main__':
-    pass
+    train_caption_net()
 
 
 # TODO pronalazak najslicnijeg vektora iz word2vec
 # TODO istrenirat i spremit mrezu
+
+# TODO evaluacija
