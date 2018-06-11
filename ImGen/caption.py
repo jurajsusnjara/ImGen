@@ -148,6 +148,9 @@ class WordVectors:
         # vec.shape = (300,)
         return self.model.most_similar(positive=[vec.reshape(300)], negative=[], topn=n)
 
+    def word_count(self, word):
+        return self.model.vocab[word].count
+
 
 class Dataset:
     def __init__(self, mapping, img_features, word2vec):
@@ -327,8 +330,12 @@ class Evaluation:
         return self.select_most_common(k, closest_words)
 
     def select_most_common(self, n, words):
-        # TODO implement
-        return words
+        word_freq = []
+        for word in words:
+            count = self.wv.word_count(word)
+            word_freq.append((word, count))
+        word_freq.sort(key=lambda tup: tup[1])
+        return word_freq[:n]
 
 
 def train_caption_net():

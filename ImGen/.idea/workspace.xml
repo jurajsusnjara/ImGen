@@ -586,8 +586,8 @@
       <file leaf-file-name="caption.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/caption.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="391" lean-forward="true" selection-start-line="391" selection-end-line="391" />
+            <state relative-caret-position="278">
+              <caret line="336" column="8" selection-start-line="336" selection-start-column="8" selection-end-line="336" selection-end-column="8" />
               <folding>
                 <element signature="e#401#491#0" />
                 <element signature="e#527#605#0" />
@@ -632,13 +632,9 @@
                 <element signature="e#9534#9732#0" />
                 <element signature="e#9775#9898#0" />
                 <element signature="e#9827#9898#0" />
-                <element signature="e#10994#12350#0" />
                 <element signature="e#10841#11341#0" />
                 <element signature="e#10576#10873#0" />
                 <element signature="e#10580#10756#0" />
-                <element signature="e#11703#12003#0" />
-                <element signature="e#11863#11991#0" />
-                <element signature="e#12294#12311#0" />
               </folding>
             </state>
           </provider>
@@ -1083,7 +1079,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528702922413</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Evaluation implemented.">
+      <created>1528721078550</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1528721078550</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1142,7 +1145,8 @@
     <MESSAGE value="Caption GAN implemented." />
     <MESSAGE value="Nearest words." />
     <MESSAGE value="Summary and saving model added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Summary and saving model added." />
+    <MESSAGE value="Evaluation implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Evaluation implemented." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1434,8 +1438,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/caption.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="391" lean-forward="true" selection-start-line="391" selection-end-line="391" />
+        <state relative-caret-position="278">
+          <caret line="336" column="8" selection-start-line="336" selection-start-column="8" selection-end-line="336" selection-end-column="8" />
           <folding>
             <element signature="e#401#491#0" />
             <element signature="e#527#605#0" />
@@ -1480,13 +1484,9 @@
             <element signature="e#9534#9732#0" />
             <element signature="e#9775#9898#0" />
             <element signature="e#9827#9898#0" />
-            <element signature="e#10994#12350#0" />
             <element signature="e#10841#11341#0" />
             <element signature="e#10576#10873#0" />
             <element signature="e#10580#10756#0" />
-            <element signature="e#11703#12003#0" />
-            <element signature="e#11863#11991#0" />
-            <element signature="e#12294#12311#0" />
           </folding>
         </state>
       </provider>
