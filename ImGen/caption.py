@@ -144,6 +144,10 @@ class WordVectors:
             self.w2v[word] = self.word2vec(word)
         return self.w2v
 
+    def get_nearest_words(self, vec, n):
+        # vec.shape = (300,)
+        return self.model.most_similar(positive=[vec.reshape(300)], negative=[], topn=n)
+
 
 class Dataset:
     def __init__(self, mapping, img_features, word2vec):
@@ -291,6 +295,42 @@ class NearestWordVectors:
         return [self.words[i] for i in indices[0]]
 
 
+class Evaluation:
+    # TODO pripazit na imena mreze
+    def __init__(self, model_meta, model_dir, wv: WordVectors, img_f: ImageFeatures):
+        self.sess = tf.Session()
+        saver = tf.train.import_meta_graph(model_meta)
+        saver.restore(self.sess, tf.train.latest_checkpoint(model_dir))
+        graph = tf.get_default_graph()
+        self.noise = graph.get_tensor_by_name('noise')
+        self.img_features = graph.get_tensor_by_name('img_features')
+        self.vector = graph.get_tensor_by_name('generator/g_out')
+        self.wv = wv
+        self.img_f = img_f
+
+    def generate_samples(self, n, img_path):
+        samples = []
+        for i in range(n):
+            img_feature = self.img_f.img2feats(img_path)
+            noise = np.random.normal(0, 1, (n, 1, 100))
+            feed_dict = {self.noise: noise, self.img_features: img_feature}
+            result = self.sess.run(self.vector, feed_dict=feed_dict)
+            samples.append(result)
+        return samples
+
+    def get_closest_words(self, samples, n, k):
+        closest_words = set()
+        for sample in samples:
+            nearest_words = self.wv.get_nearest_words(sample, n)
+            for word in nearest_words:
+                closest_words.add(word)
+        return self.select_most_common(k, closest_words)
+
+    def select_most_common(self, n, words):
+        # TODO implement
+        return words
+
+
 def train_caption_net():
     mapping = load_pickle('caption_data/mapping')
     img_features = load_pickle('caption_data/img_features')
@@ -305,6 +345,7 @@ def train_caption_net():
     net = CaptionNet(batch_size, lr, dropout, 'model/model.ckpt', 'summary')
     net.init_session()
     net.train(dataset.dataset, epochs)
+    net.end_session()
 
 
 def define_nearest_model():
@@ -319,11 +360,41 @@ def define_nearest_model():
     print(res)
 
 
+def words_frequency():
+    fname = 'caption_data/mapping'
+    mapping = load_pickle(fname)
+    word_freq = {}
+    for id, words in mapping.items():
+        for word in words:
+            if word_freq.get(word, None) is None:
+                word_freq[word] = 1
+            else:
+                word_freq[word] += 1
+    print(len(word_freq))
+
+
+def test_gmodel():
+    word = 'pigs'
+    wv = WordVectors('GoogleNews-vectors-negative300.bin')
+    nearest = wv.get_nearest_words(wv.word2vec(word), 10)
+    print(nearest)
+
+
+def evaluation():
+    img_path = ''
+    wv = WordVectors('GoogleNews-vectors-negative300.bin')
+    img_feats = ImageFeatures()
+    eval = Evaluation('model/model.ckpt.meta', 'model', wv, img_feats)
+    samples = eval.generate_samples(100, img_path)
+    closest = eval.get_closest_words(samples, 20, 10)
+    print(closest)
+
+
 if __name__ == '__main__':
-    train_caption_net()
+    test_gmodel()
 
 
-# TODO pronalazak najslicnijeg vektora iz word2vec
-# TODO istrenirat i spremit mrezu
 
 # TODO evaluacija
+
+# TODO reshapeat ulaze u (4096,) i (300,)
