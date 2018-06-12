@@ -184,11 +184,63 @@ class Dataset:
         self.dataset = cleaned_dataset
 
 
+class Evaluation:
+    def __init__(self, model_meta, model_dir, wv: WordVectors, img_f: ImageFeatures):
+        self.sess = tf.Session()
+        saver = tf.train.import_meta_graph(model_meta)
+        saver.restore(self.sess, tf.train.latest_checkpoint(model_dir))
+        graph = tf.get_default_graph()
+        self.noise = graph.get_tensor_by_name('noise:0')
+        self.img_features = graph.get_tensor_by_name('img_features:0')
+        self.vector = graph.get_tensor_by_name('generator/g_out/BiasAdd:0')
+        self.wv = wv
+        self.img_f = img_f
+
+    def generate_samples(self, n, img_path):
+        samples = []
+        img_feature = self.img_f.img2feats(img_path)
+        noise = np.random.normal(0, 1, (n, 1, 100))
+        img_repeats = np.repeat(img_feature, n, axis=0).reshape(n, 1, 4096)
+        feed_dict = {self.noise: noise, self.img_features: img_repeats}
+        result = self.sess.run(self.vector, feed_dict=feed_dict)
+        for r in result:
+            samples.append(r)
+        return samples
+
+    def generate_train_samples(self, n, img_path, sess, noise, img_features, out):
+        samples = []
+        img_feature = self.img_f.img2feats(img_path)
+        noise_ = np.random.normal(0, 1, (n, 1, 100))
+        img_repeats_ = np.repeat(img_feature, n, axis=0).reshape(n, 1, 4096)
+        feed_dict = {noise: noise_, img_features: img_repeats_}
+        result = sess.run(out, feed_dict=feed_dict)
+        for r in result:
+            samples.append(r)
+        return samples
+
+    def get_closest_words(self, samples, n, k):
+        closest_words = set()
+        for sample in samples:
+            nearest_words = self.wv.get_nearest_words(sample, n)
+            for t in nearest_words:
+                closest_words.add(t[0])
+        return self.select_most_common(k, closest_words)
+
+    def select_most_common(self, n, words):
+        word_freq = []
+        for word in words:
+            count = self.wv.word_count(word)
+            word_freq.append((word, count))
+        word_freq.sort(key=lambda tup: tup[1], reverse=True)
+        return word_freq[:n]
+
+
 class CaptionNet:
     def __init__(self, batch_size, lr, dropout, save_model, save_summary):
         self.sess = None
         self.saver = None
         self.writer = None
+        self.eval = eval
         self.save_summary = save_summary
         self.save_model = save_model
         self.batch_size = batch_size
@@ -227,6 +279,12 @@ class CaptionNet:
             x2 = tf.nn.dropout(x2, self.dropout)
             x = tf.concat([x1, x2], axis=2)
             x = tf.nn.dropout(x, self.dropout)
+            x = tf.layers.dense(x, units=1000)
+            x = tf.nn.dropout(x, self.dropout)
+            x = tf.layers.dense(x, units=1000)
+            x = tf.nn.dropout(x, self.dropout)
+            x = tf.layers.dense(x, units=1000)
+            x = tf.nn.dropout(x, self.dropout)
             out = tf.layers.dense(x, units=300, name='g_out')
         return out
 
@@ -237,7 +295,10 @@ class CaptionNet:
             x2 = tf.layers.dense(word_vec, units=500, activation=tf.nn.relu)
             x2 = tf.nn.dropout(x2, self.dropout)
             x = tf.concat([x1, x2], axis=2)
-            # x = tf.contrib.layers.maxout(x, 1000)
+            x = tf.layers.dense(x, units=1000)
+            x = tf.nn.dropout(x, self.dropout)
+            x = tf.layers.dense(x, units=1000)
+            x = tf.nn.dropout(x, self.dropout)
             x = tf.layers.dense(x, units=1000)
             x = tf.nn.dropout(x, self.dropout)
             logit = tf.layers.dense(x, units=1)
@@ -254,9 +315,9 @@ class CaptionNet:
         N = len(train_set)
         n_batches = N // self.batch_size
         np.random.seed(int(time.time()))
+        start = time.time()
         for epoch in range(epochs):
             for i in range(n_batches):
-                start = time.time()
                 curr_batch_no = epoch * n_batches + i
                 data = train_set[i * self.batch_size:(i + 1) * self.batch_size]
                 img_features_data = [el[0] for el in data]
@@ -269,12 +330,24 @@ class CaptionNet:
                 loss_g_, _, summary = self.sess.run([self.G_loss, self.G_optim, self.G_loss_summary],
                                       {self.img_features: img_features_data, self.word_vec: word_vec_data, self.noise: noise})
                 self.writer.add_summary(summary, curr_batch_no)
-                duration = time.time() - start
-                print('Epoch', epoch + 1, '/', epochs,
-                      'Batch', i + 1, '/', n_batches, ':',
-                      'D_loss', np.mean(loss_d_),
-                      'G_loss', np.mean(loss_g_),
-                      'Duration', duration)
+                if i % 500 == 0:
+                    duration = time.time() - start
+                    start = time.time()
+                    print('Epoch', epoch + 1, '/', epochs,
+                          'Batch', i + 1, '/', n_batches, ':',
+                          'D_loss', np.mean(loss_d_),
+                          'G_loss', np.mean(loss_g_),
+                          'Duration', duration)
+            # print('Generating samples')
+            # samples = self.eval.generate_train_samples(1,
+            #                                            'apples.jpg',
+            #                                            self.sess,
+            #                                            self.noise,
+            #                                            self.img_features,
+            #                                            self.generator(self.noise, self.img_features, reuse=True))
+            # print('Getting closest words')
+            # closest = self.eval.get_closest_words(samples, 20, 10)
+            # print(closest)
 
     def end_session(self):
         self.saver.save(self.sess, self.save_model)
@@ -299,48 +372,13 @@ class NearestWordVectors:
         return [self.words[i] for i in indices[0]]
 
 
-class Evaluation:
-    def __init__(self, model_meta, model_dir, wv: WordVectors, img_f: ImageFeatures):
-        self.sess = tf.Session()
-        saver = tf.train.import_meta_graph(model_meta)
-        saver.restore(self.sess, tf.train.latest_checkpoint(model_dir))
-        graph = tf.get_default_graph()
-        self.noise = graph.get_tensor_by_name('noise:0')
-        self.img_features = graph.get_tensor_by_name('img_features:0')
-        self.vector = graph.get_tensor_by_name('generator/g_out/BiasAdd:0')
-        self.wv = wv
-        self.img_f = img_f
-
-    def generate_samples(self, n, img_path):
-        samples = []
-
-        img_feature = self.img_f.img2feats(img_path)
-        noise = np.random.normal(0, 1, (n, 1, 100))
-        img_repeats = np.repeat(img_feature, n, axis=0).reshape(n, 1, 4096)
-        feed_dict = {self.noise: noise, self.img_features: img_repeats}
-        result = self.sess.run(self.vector, feed_dict=feed_dict)
-        for r in result:
-            samples.append(r)
-        return samples
-
-    def get_closest_words(self, samples, n, k):
-        closest_words = set()
-        for sample in samples:
-            nearest_words = self.wv.get_nearest_words(sample, n)
-            for t in nearest_words:
-                closest_words.add(t[0])
-        return self.select_most_common(k, closest_words)
-
-    def select_most_common(self, n, words):
-        word_freq = []
-        for word in words:
-            count = self.wv.word_count(word)
-            word_freq.append((word, count))
-        word_freq.sort(key=lambda tup: tup[1], reverse=True)
-        return word_freq[:n]
-
-
 def train_caption_net():
+    # print('Loading w2v model')
+    # wv = WordVectors('GoogleNews-vectors-negative300.bin')
+    # print('Loading img features')
+    # img_feats = ImageFeatures()
+    # eval = Evaluation('model1/model.ckpt.meta', 'model1', wv, img_feats)
+
     mapping = load_pickle('caption_data/mapping')
     img_features = load_pickle('caption_data/img_features')
     word2vec = load_pickle('caption_data/word2vec')
@@ -349,8 +387,8 @@ def train_caption_net():
     dataset.clean_dataset()
     lr = 0.0005
     batch_size = 100
-    dropout = 0.5
-    epochs = 20
+    dropout = 0.2
+    epochs = 100
     net = CaptionNet(batch_size, lr, dropout, 'model/model.ckpt', 'summary')
     net.init_session()
     net.train(dataset.dataset, epochs)
@@ -393,7 +431,6 @@ def evaluation():
     img_path = 'apples.jpg'
     print('Loading w2v model')
     wv = WordVectors('GoogleNews-vectors-negative300.bin')
-    # wv = None
     print('Loading img features')
     img_feats = ImageFeatures()
     eval = Evaluation('model/model.ckpt.meta', 'model', wv, img_feats)
@@ -406,6 +443,3 @@ def evaluation():
 
 if __name__ == '__main__':
     train_caption_net()
-
-
-# TODO reshapeat ulaze u (4096,) i (300,) ?
