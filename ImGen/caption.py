@@ -7,6 +7,7 @@ from keras.applications.imagenet_utils import decode_predictions
 from keras import backend as K
 import numpy as np
 import gensim
+import gensim.downloader as api
 import tensorflow as tf
 import time
 from sklearn.neighbors import NearestNeighbors
@@ -126,6 +127,7 @@ class ImageFeatures:
 class WordVectors:
     def __init__(self, fmodel):
         self.model = gensim.models.KeyedVectors.load_word2vec_format(fmodel, binary=True)
+        # self.model = api.load("glove-twitter-25")
         self.w2v = {}
 
     def word2vec(self, word):
@@ -145,7 +147,6 @@ class WordVectors:
         return self.w2v
 
     def get_nearest_words(self, vec, n):
-        # vec.shape = (300,)
         return self.model.most_similar(positive=[vec.reshape(300)], negative=[], topn=n)
 
     def word_count(self, word):
@@ -299,34 +300,35 @@ class NearestWordVectors:
 
 
 class Evaluation:
-    # TODO pripazit na imena mreze
     def __init__(self, model_meta, model_dir, wv: WordVectors, img_f: ImageFeatures):
         self.sess = tf.Session()
         saver = tf.train.import_meta_graph(model_meta)
         saver.restore(self.sess, tf.train.latest_checkpoint(model_dir))
         graph = tf.get_default_graph()
-        self.noise = graph.get_tensor_by_name('noise')
-        self.img_features = graph.get_tensor_by_name('img_features')
-        self.vector = graph.get_tensor_by_name('generator/g_out')
+        self.noise = graph.get_tensor_by_name('noise:0')
+        self.img_features = graph.get_tensor_by_name('img_features:0')
+        self.vector = graph.get_tensor_by_name('generator/g_out/BiasAdd:0')
         self.wv = wv
         self.img_f = img_f
 
     def generate_samples(self, n, img_path):
         samples = []
-        for i in range(n):
-            img_feature = self.img_f.img2feats(img_path)
-            noise = np.random.normal(0, 1, (n, 1, 100))
-            feed_dict = {self.noise: noise, self.img_features: img_feature}
-            result = self.sess.run(self.vector, feed_dict=feed_dict)
-            samples.append(result)
+
+        img_feature = self.img_f.img2feats(img_path)
+        noise = np.random.normal(0, 1, (n, 1, 100))
+        img_repeats = np.repeat(img_feature, n, axis=0).reshape(n, 1, 4096)
+        feed_dict = {self.noise: noise, self.img_features: img_repeats}
+        result = self.sess.run(self.vector, feed_dict=feed_dict)
+        for r in result:
+            samples.append(r)
         return samples
 
     def get_closest_words(self, samples, n, k):
         closest_words = set()
         for sample in samples:
             nearest_words = self.wv.get_nearest_words(sample, n)
-            for word in nearest_words:
-                closest_words.add(word)
+            for t in nearest_words:
+                closest_words.add(t[0])
         return self.select_most_common(k, closest_words)
 
     def select_most_common(self, n, words):
@@ -334,7 +336,7 @@ class Evaluation:
         for word in words:
             count = self.wv.word_count(word)
             word_freq.append((word, count))
-        word_freq.sort(key=lambda tup: tup[1])
+        word_freq.sort(key=lambda tup: tup[1], reverse=True)
         return word_freq[:n]
 
 
@@ -348,7 +350,7 @@ def train_caption_net():
     lr = 0.0005
     batch_size = 100
     dropout = 0.5
-    epochs = 1
+    epochs = 20
     net = CaptionNet(batch_size, lr, dropout, 'model/model.ckpt', 'summary')
     net.init_session()
     net.train(dataset.dataset, epochs)
@@ -388,20 +390,22 @@ def test_gmodel():
 
 
 def evaluation():
-    img_path = ''
+    img_path = 'apples.jpg'
+    print('Loading w2v model')
     wv = WordVectors('GoogleNews-vectors-negative300.bin')
+    # wv = None
+    print('Loading img features')
     img_feats = ImageFeatures()
     eval = Evaluation('model/model.ckpt.meta', 'model', wv, img_feats)
+    print('Generating samples')
     samples = eval.generate_samples(100, img_path)
+    print('Getting closest words')
     closest = eval.get_closest_words(samples, 20, 10)
     print(closest)
 
 
 if __name__ == '__main__':
-    test_gmodel()
+    train_caption_net()
 
 
-
-# TODO evaluacija
-
-# TODO reshapeat ulaze u (4096,) i (300,)
+# TODO reshapeat ulaze u (4096,) i (300,) ?
