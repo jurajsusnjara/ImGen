@@ -1,9 +1,0 @@
-> opisat duboko učenje
-> opisat frameworke za duboko učenje
-> opisat generativne modele
-> opisat DCGAN-ove
-
-> istrenirat DCGAN nad MNIST-om (grafove za ocjenu, drugačiji parametri itd.)
-> istrenirat DCGAN nad kompliciranijem skupom podataka (grafove za ocjenu, drugačiji parametri itd.)
-
-> za dvi prijašnje točke spremit parametre za najbolju istreniranu mrežu i pomoću toga napravit jednostavan komandno linijski program pomoću kojeg će se moći generirati slike (slide-anje po distribuciji ?)
